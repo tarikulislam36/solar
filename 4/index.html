@@ -39,6 +39,40 @@ tailwind.config = {
   .metric-line{position:relative}
   .metric-line:after{content:"";position:absolute;right:-1px;top:20%;height:60%;width:1px;background:#dbe6e2}
   .metric-line:last-child:after{display:none}
+  /* new css  */
+  .whatsapp-float {
+    animation: whatsappFloatIn 0.7s ease-out both;
+  }
+
+  @keyframes whatsappFloatIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.85);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .whatsapp-float {
+      right: 18px;
+      bottom: 18px;
+    }
+
+    .whatsapp-float > span:last-child {
+      width: 52px;
+      height: 52px;
+    }
+
+    .whatsapp-float svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
 </style>
 </head>
 
