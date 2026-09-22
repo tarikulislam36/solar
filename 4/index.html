@@ -72,7 +72,281 @@ tailwind.config = {
       height: 25px;
     }
   }
+/* NEW css */
+/* =========================================
+   ENTERPRISE SCHEME SCROLLER
+========================================= */
+/* =========================================
+   ENTERPRISE RESPONSIVE SCHEME CARDS
+========================================= */
 
+.scheme-scroll {
+  display: flex;
+  gap: 18px;
+
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  padding: 2px 2px 12px;
+
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: thin;
+  scrollbar-color: #cbd8d3 transparent;
+}
+
+
+/* Chrome / Edge / Safari */
+
+.scheme-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.scheme-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scheme-scroll::-webkit-scrollbar-thumb {
+  background: #cbd8d3;
+  border-radius: 999px;
+}
+
+.scheme-scroll::-webkit-scrollbar-thumb:hover {
+  background: #2D8A62;
+}
+
+
+/* =========================================
+   CARD BASE
+========================================= */
+
+.scheme-card {
+  flex: 0 0 auto;
+
+  width: calc(100% - 28px);
+
+  min-width: 0;
+
+  scroll-snap-align: start;
+
+  box-shadow: none;
+
+  border-radius: 22px;
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+
+/* subtle enterprise hover */
+
+.scheme-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 24px rgba(23, 53, 45, 0.07);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 639px) {
+
+  .scheme-scroll {
+
+    gap: 14px;
+
+    margin-right: -20px;
+
+    padding-right: 20px;
+    padding-left: 1px;
+
+    scroll-padding-left: 1px;
+  }
+
+
+  .scheme-card {
+
+    /*
+      One complete card + small peek
+      of next card
+    */
+
+    width: calc(100vw - 52px);
+
+    max-width: none;
+
+    min-width: calc(100vw - 52px);
+
+    border-radius: 20px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL TABLETS
+========================================= */
+
+@media (min-width: 640px) and (max-width: 767px) {
+
+  .scheme-card {
+
+    width: calc(72vw);
+
+    min-width: calc(72vw);
+  }
+
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .scheme-scroll {
+
+    gap: 18px;
+  }
+
+  .scheme-card {
+
+    width: calc((100% - 18px) / 2);
+
+    min-width: calc((100% - 18px) / 2);
+  }
+
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 1024px) {
+
+  .scheme-scroll {
+
+    gap: 18px;
+
+    overflow-x: auto;
+  }
+
+
+  .scheme-card {
+
+    /*
+      Exactly 3 cards inside container
+    */
+
+    width: calc((100% - 36px) / 3);
+
+    min-width: calc((100% - 36px) / 3);
+  }
+
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1400px) {
+
+  .scheme-card {
+
+    width: calc((100% - 36px) / 3);
+
+    min-width: calc((100% - 36px) / 3);
+  }
+
+}
+
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .scheme-scroll {
+    scroll-behavior: auto;
+  }
+
+  .scheme-card {
+    transition: none;
+  }
+
+}
+/* =========================================
+   SCROLL EDGE FADES
+   Very subtle enterprise-style fade new css
+========================================= */
+
+.scheme-edge-fade {
+  pointer-events: none;
+  top: 0;
+  bottom: 0;
+
+  width: 18px;
+
+  opacity: 0.45;
+
+  z-index: 10;
+
+  transition: opacity 0.25s ease;
+}
+
+
+/* LEFT */
+
+.scheme-edge-fade-left {
+  left: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(250, 251, 248, 0.45),
+    rgba(250, 251, 248, 0)
+  );
+}
+
+
+/* RIGHT */
+
+.scheme-edge-fade-right {
+  right: 0;
+
+  background: linear-gradient(
+    to left,
+    rgba(250, 251, 248, 0.45),
+    rgba(250, 251, 248, 0)
+  );
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 639px) {
+
+  .scheme-edge-fade {
+    width: 8px;
+    opacity: 0.28;
+  }
+
+}
 </style>
 </head>
 
@@ -237,156 +511,78 @@ tailwind.config = {
     <div class="text-[10px] font-extrabold uppercase tracking-[.16em] text-slate-400">Built around reliability · transparency · long-term value</div>
   </div>
 </section> -->
-<!-- GOVERNMENT SOLAR BENEFITS / HOME PAGE OFFER -->
-<section id="solar-benefits" class="relative overflow-hidden border-b border-slate-100 bg-sand">
+<!-- =========================================
+     GOVERNMENT SCHEMES 
+========================================= -->
 
-  <div class="mx-auto max-w-[1400px] px-5 py-12 lg:px-8 lg:py-14">
+<section
+  id="solar-benefits"
+  class="relative overflow-hidden border-b border-slate-100 bg-sand"
+>
 
-    <!-- HEADER -->
-    <div class="grid items-center gap-8 lg:grid-cols-[1fr_.78fr]">
+  <div class="mx-auto max-w-[1400px] px-5 py-14 lg:px-8 lg:py-16">
 
-      <div class="fade-up">
+    <!-- SECTION HEADER -->
+    <div
+      class="fade-up flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between"
+    >
 
-        <!-- Label -->
+      <div class="max-w-3xl">
+
+        <!-- Eyebrow -->
         <div
           class="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-white px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.16em] text-forest shadow-sm"
         >
-          <span class="grid h-5 w-5 place-items-center rounded-full bg-mint">
+          <span
+            class="grid h-5 w-5 place-items-center rounded-full bg-mint"
+          >
             ✓
           </span>
 
           Government Solar Benefits
         </div>
 
-        <!-- Heading -->
         <h2
-          class="mt-4 max-w-3xl text-3xl font-extrabold leading-[1.08] tracking-tight text-ink sm:text-4xl lg:text-[46px]"
+          class="mt-5 text-3xl font-extrabold leading-[1.06] tracking-tight text-ink sm:text-4xl lg:text-[48px]"
         >
-          Go solar.
-          <span class="text-forest">Save more.</span>
-          <br class="hidden sm:block">
-          Check your benefits.
+          Your rooftop can do more.
+          <span class="text-forest">So can your savings.</span>
         </h2>
 
-        <p class="mt-4 max-w-2xl text-sm leading-6 text-slate-600">
-          Eligible residential customers may receive Central Financial Assistance
-          under
-          <strong class="text-ink">
-            PM-Surya Ghar: Muft Bijli Yojana.
-          </strong>
-          We help you understand the applicable scheme, system size and next steps.
+        <p
+          class="mt-4 max-w-2xl text-sm leading-6 text-slate-600"
+        >
+          Explore government solar programmes that may help eligible
+          households, housing societies and agricultural users adopt
+          renewable energy.
         </p>
-
-        <!-- Quick benefits -->
-        <div class="mt-6 flex flex-wrap gap-2.5">
-
-          <div class="flex items-center gap-2 rounded-xl bg-white px-3.5 py-2.5 shadow-sm">
-            <span class="grid h-6 w-6 place-items-center rounded-full bg-mint text-xs font-black text-forest">
-              ₹
-            </span>
-
-            <div>
-              <p class="text-[8px] font-bold uppercase tracking-wider text-slate-400">
-                Residential CFA
-              </p>
-
-              <p class="text-xs font-extrabold text-ink">
-                Up to ₹78,000*
-              </p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-2 rounded-xl bg-white px-3.5 py-2.5 shadow-sm">
-            <span class="grid h-6 w-6 place-items-center rounded-full bg-mint text-xs font-black text-forest">
-              ☀
-            </span>
-
-            <div>
-              <p class="text-[8px] font-bold uppercase tracking-wider text-slate-400">
-                Rooftop Solar
-              </p>
-
-              <p class="text-xs font-extrabold text-ink">
-                PM-Surya Ghar
-              </p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-2 rounded-xl bg-white px-3.5 py-2.5 shadow-sm">
-            <span class="grid h-6 w-6 place-items-center rounded-full bg-mint text-xs font-black text-forest">
-              ✓
-            </span>
-
-            <div>
-              <p class="text-[8px] font-bold uppercase tracking-wider text-slate-400">
-                Assistance
-              </p>
-
-              <p class="text-xs font-extrabold text-ink">
-                Eligibility Guidance
-              </p>
-            </div>
-          </div>
-
-        </div>
 
       </div>
 
 
-      <!-- VISUAL BENEFIT CARD -->
-      <div class="fade-up relative">
+      <!-- RIGHT META -->
+      <div class="hidden lg:block">
 
-        <div class="group relative h-[270px] overflow-hidden rounded-[24px] shadow-enterprise">
+        <div
+          class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm"
+        >
 
-          <!-- Solar photograph -->
-          <img
-            src="https://images.unsplash.com/photo-1630770147528-3c38bc9e05a6?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=80&w=1400"
-            alt="Residential rooftop solar panels"
-            class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-            loading="lazy"
+          <div
+            class="grid h-10 w-10 place-items-center rounded-xl bg-mint text-forest"
           >
-
-          <!-- Image overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-[#092F24]/90 via-[#092F24]/25 to-transparent"></div>
-
-          <!-- Government-style badge -->
-          <div class="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-white/20 bg-white/95 px-3 py-2 shadow-lg">
-
-            <span class="grid h-7 w-7 place-items-center rounded-full bg-[#FF9933] text-xs font-black text-white">
-              ☀
-            </span>
-
-            <div>
-              <p class="text-[8px] font-extrabold uppercase tracking-widest text-slate-400">
-                Solar Programme
-              </p>
-
-              <p class="text-[10px] font-black text-ink">
-                PM-Surya Ghar
-              </p>
-            </div>
-
+            ☀
           </div>
 
-          <!-- Bottom content -->
-          <div class="absolute bottom-5 left-5 right-5">
-
-            <p class="text-[9px] font-bold uppercase tracking-[.18em] text-amber">
-              For eligible residential customers
+          <div>
+            <p
+              class="text-[9px] font-extrabold uppercase tracking-[.16em] text-slate-400"
+            >
+              Explore benefits
             </p>
 
-            <div class="mt-1 flex items-end justify-between gap-3">
-
-              <h3 class="text-2xl font-extrabold text-white">
-                Up to ₹78,000
-              </h3>
-
-              <span class="rounded-lg bg-white/95 px-3 py-2 text-[9px] font-extrabold text-ink shadow-lg">
-                CHECK BENEFITS →
-              </span>
-
-            </div>
-
+            <p class="mt-1 text-sm font-extrabold text-ink">
+              Before you invest
+            </p>
           </div>
 
         </div>
@@ -395,467 +591,628 @@ tailwind.config = {
 
     </div>
 
-
-    <!-- BENEFIT CARDS -->
-    <div class="mt-8 grid gap-4 md:grid-cols-3">
-
-      <!-- CARD 1 -->
-      <article
-        class="group relative overflow-hidden rounded-[20px] bg-ink p-6 text-white shadow-enterprise transition duration-300 hover:-translate-y-1"
-      >
-
-        <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full border-[24px] border-white/5"></div>
-
-        <div class="relative">
-
-          <div class="flex items-center justify-between">
-
-            <span class="rounded-full bg-white/10 px-3 py-1.5 text-[9px] font-extrabold uppercase tracking-[.14em] text-white/70">
-              Residential
-            </span>
-
-            <span class="text-sm font-light text-amber">
-              01
-            </span>
-
-          </div>
-
-          <h3 class="mt-7 text-xl font-extrabold">
-            PM-Surya Ghar
-          </h3>
-
-          <p class="mt-1 text-xs font-semibold text-amber">
-            Muft Bijli Yojana
-          </p>
-
-          <p class="mt-4 text-xs leading-5 text-white/55">
-            Eligible residential rooftop systems can receive Central Financial Assistance under the programme.
-          </p>
-
-          <!-- Amount -->
-          <div class="mt-5 rounded-xl border border-white/10 bg-white/5 p-4">
-
-            <div class="flex items-center justify-between">
-
-              <div>
-                <p class="text-[8px] uppercase tracking-widest text-white/35">
-                  First 2 kW
-                </p>
-
-                <p class="mt-1 text-lg font-black">
-                  ₹30,000/kW
-                </p>
-              </div>
-
-              <div class="h-8 w-px bg-white/10"></div>
-
-              <div>
-                <p class="text-[8px] uppercase tracking-widest text-white/35">
-                  Next 1 kW
-                </p>
-
-                <p class="mt-1 text-lg font-black">
-                  ₹18,000/kW
-                </p>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="mt-4 flex items-center justify-between">
-
-            <span class="text-[9px] font-bold uppercase tracking-widest text-white/40">
-              Maximum CFA
-            </span>
-
-            <strong class="text-lg font-black text-amber">
-              ₹78,000*
-            </strong>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- CARD 2 -->
-      <article
-        class="group rounded-[20px] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-enterprise"
-      >
-
-        <div class="flex items-center justify-between">
-
-          <span class="rounded-full bg-mint px-3 py-1.5 text-[9px] font-extrabold uppercase tracking-[.14em] text-forest">
-            Apartments & RWA
-          </span>
-
-          <span class="text-sm font-light text-amber">
-            02
-          </span>
-
-        </div>
-
-        <h3 class="mt-7 text-xl font-extrabold text-ink">
-          Common-area solar
-        </h3>
-
-        <p class="mt-1 text-xs font-semibold text-forest">
-          GHS / RWA facilities
-        </p>
-
-        <p class="mt-4 text-xs leading-5 text-slate-500">
-          Eligible group housing societies and RWAs may receive CFA for common facilities, including EV charging, subject to programme conditions.
-        </p>
-
-        <div class="mt-5 rounded-xl bg-mint p-4">
-
-          <p class="text-[8px] font-bold uppercase tracking-widest text-slate-400">
-            Published scheme structure
-          </p>
-
-          <p class="mt-1 text-2xl font-black text-forest">
-            ₹18,000/kW
-          </p>
-
-          <p class="mt-1 text-[10px] leading-4 text-slate-500">
-            Common facilities can be covered under the applicable PM-Surya Ghar framework.
-          </p>
-
-        </div>
-
-        <div class="mt-4 flex items-center gap-2 text-[9px] font-extrabold uppercase tracking-widest text-forest">
-
-          <span class="grid h-6 w-6 place-items-center rounded-full bg-mint">
-            ✓
-          </span>
-
-          EV charging can be included
-
-        </div>
-
-      </article>
-
-
-      <!-- CARD 3 -->
-      <article
-        class="group relative overflow-hidden rounded-[20px] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-enterprise"
-      >
-
-        <div class="flex items-center justify-between">
-
-          <span class="rounded-full bg-amber/15 px-3 py-1.5 text-[9px] font-extrabold uppercase tracking-[.14em] text-ink">
-            Agriculture
-          </span>
-
-          <span class="text-sm font-light text-amber">
-            03
-          </span>
-
-        </div>
-
-        <h3 class="mt-7 text-xl font-extrabold text-ink">
-          PM-KUSUM
-        </h3>
-
-        <p class="mt-1 text-xs font-semibold text-forest">
-          Solar for agriculture
-        </p>
-
-        <p class="mt-4 text-xs leading-5 text-slate-500">
-          Solar pumps, pump solarisation and decentralised solar projects are covered under the PM-KUSUM framework.
-        </p>
-
-        <div class="mt-5 rounded-xl bg-[#FFF8E8] p-4">
-
-          <div class="flex items-start gap-3">
-
-            <span class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-amber/20 text-sm">
-              ☀
-            </span>
-
-            <div>
-
-              <p class="text-[8px] font-bold uppercase tracking-widest text-slate-400">
-                Important
-              </p>
-
-              <p class="mt-1 text-xs font-bold leading-5 text-ink">
-                State-level availability and scheme conditions should be verified before commitment.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <a
-          href="https://mnre.gov.in/en/pradhan-mantri-kisan-urja-suraksha-evam-utthaan-mahabhiyaan-pm-kusum/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="mt-4 inline-flex items-center gap-2 text-[9px] font-extrabold uppercase tracking-widest text-forest transition group-hover:gap-3"
+<!-- =========================================
+     HORIZONTAL SCROLL CONTAINER
+========================================== -->
+
+<div class="relative mt-10">
+
+  <!-- LEFT FADE -->
+  <div
+    class="scheme-edge-fade scheme-edge-fade-left pointer-events-none absolute left-0 top-0 z-10 h-full"
+  ></div>
+
+  <!-- RIGHT FADE -->
+  <div
+    class="scheme-edge-fade scheme-edge-fade-right pointer-events-none absolute right-0 top-0 z-10 h-full"
+  ></div>
+
+  <div
+    id="schemeScroller"
+    class="scheme-scroll flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5 pr-8 scroll-smooth"
+  >
+
+        <!-- =====================================
+             PM SURYA GHAR
+        ====================================== -->
+
+        <article
+          class="scheme-card group relative min-w-[330px] snap-start overflow-hidden rounded-[24px] bg-ink p-7 text-white shadow-enterprise transition duration-500 hover:-translate-y-1 hover:shadow-2xl sm:min-w-[370px] lg:min-w-[400px]"
         >
-          VIEW MNRE DETAILS
-          <span>→</span>
-        </a>
 
-      </article>
-
-    </div>
-
-
-    <!-- ELIGIBILITY / INTERACTIVE CALCULATOR -->
-    <div
-      class="mt-5 overflow-hidden rounded-[22px] border border-slate-200 bg-white shadow-sm"
-    >
-
-      <div class="grid lg:grid-cols-[.75fr_1.25fr]">
-
-        <!-- Left -->
-        <div class="bg-[#EAF6F0] p-7 lg:p-8">
-
-          <p class="text-[9px] font-extrabold uppercase tracking-[.18em] text-forest">
-            Quick eligibility check
-          </p>
-
-          <h3 class="mt-2 text-2xl font-extrabold leading-tight tracking-tight text-ink">
-            Could your rooftop qualify?
-          </h3>
-
-          <p class="mt-3 text-xs leading-5 text-slate-600">
-            Answer a few quick questions and get an indicative result.
-          </p>
-
-          <!-- Highlight -->
-          <div class="mt-6 rounded-xl bg-white p-4 shadow-sm">
-
-            <div class="flex items-center justify-between">
-
-              <div>
-                <p class="text-[8px] font-bold uppercase tracking-widest text-slate-400">
-                  Maximum residential CFA
-                </p>
-
-                <p class="mt-1 text-2xl font-black text-forest">
-                  ₹78,000
-                </p>
-              </div>
-
-              <div class="grid h-11 w-11 place-items-center rounded-xl bg-mint text-xl text-forest">
-                ₹
-              </div>
-
-            </div>
-
-          </div>
-
-          <p class="mt-4 text-[9px] leading-4 text-slate-400">
-            *Indicative only. Final eligibility and CFA depend on applicable government guidelines, portal workflow, DISCOM verification and other conditions.
-          </p>
-
-        </div>
-
-
-        <!-- Right -->
-        <div class="p-7 lg:p-8">
-
-          <div class="grid gap-5 sm:grid-cols-2">
-
-            <!-- Property -->
-            <div>
-
-              <label
-                for="eligibilityProperty"
-                class="text-[9px] font-extrabold uppercase tracking-widest text-ink"
-              >
-                Property type
-              </label>
-
-              <select
-                id="eligibilityProperty"
-                class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-xs font-semibold text-ink outline-none transition focus:border-forest"
-              >
-                <option value="residential">
-                  Residential house
-                </option>
-
-                <option value="rwa">
-                  Apartment / RWA
-                </option>
-
-                <option value="commercial">
-                  Commercial property
-                </option>
-
-                <option value="agriculture">
-                  Agricultural property
-                </option>
-              </select>
-
-            </div>
-
-
-            <!-- Ownership -->
-            <div>
-
-              <label
-                for="eligibilityOwnership"
-                class="text-[9px] font-extrabold uppercase tracking-widest text-ink"
-              >
-                Property status
-              </label>
-
-              <select
-                id="eligibilityOwnership"
-                class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-xs font-semibold text-ink outline-none transition focus:border-forest"
-              >
-                <option value="owner">
-                  I own the property
-                </option>
-
-                <option value="tenant">
-                  I am a tenant
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <!-- Electricity -->
-            <div>
-
-              <label
-                for="eligibilityElectricity"
-                class="text-[9px] font-extrabold uppercase tracking-widest text-ink"
-              >
-                Electricity connection
-              </label>
-
-              <select
-                id="eligibilityElectricity"
-                class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-xs font-semibold text-ink outline-none transition focus:border-forest"
-              >
-                <option value="yes">
-                  Yes, active connection
-                </option>
-
-                <option value="no">
-                  No electricity connection
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <!-- Capacity -->
-            <div>
-
-              <label
-                for="eligibilityCapacity"
-                class="text-[9px] font-extrabold uppercase tracking-widest text-ink"
-              >
-                Desired solar capacity
-              </label>
-
-              <select
-                id="eligibilityCapacity"
-                class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-xs font-semibold text-ink outline-none transition focus:border-forest"
-              >
-                <option value="1">
-                  1 kW
-                </option>
-
-                <option value="2">
-                  2 kW
-                </option>
-
-                <option value="2.5">
-                  2.5 kW
-                </option>
-
-                <option value="3" selected>
-                  3 kW
-                </option>
-
-                <option value="4">
-                  4 kW
-                </option>
-
-                <option value="5">
-                  5 kW+
-                </option>
-
-              </select>
-
-            </div>
-
-          </div>
-
-
-          <!-- Result -->
+          <!-- Decorative -->
           <div
-            id="eligibilityResult"
-            class="mt-5 hidden rounded-xl border border-forest/10 bg-mint p-4"
-          >
+            class="absolute -right-20 -top-20 h-48 w-48 rounded-full border-[35px] border-white/5 transition duration-700 group-hover:scale-125"
+          ></div>
 
-            <div class="flex items-start gap-3">
+          <div
+            class="absolute bottom-0 right-0 h-32 w-32 rounded-full bg-forest/20 blur-3xl"
+          ></div>
+
+
+          <div class="relative">
+
+            <!-- Official identity -->
+            <div class="flex items-start justify-between gap-4">
+
+              <div class="flex items-center gap-3">
+
+                <!-- Government / PM identity -->
+                <div
+                  class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white text-ink shadow-lg"
+                >
+                  <div class="text-center leading-none">
+                    <div class="text-[10px] font-black">
+                      PM
+                    </div>
+
+                    <div class="mt-0.5 text-[6px] font-bold tracking-tight">
+                      SURYA
+                    </div>
+
+                    <div class="text-[6px] font-bold tracking-tight">
+                      GHAR
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+
+                  <p
+                    class="text-[8px] font-extrabold uppercase tracking-[.16em] text-white/40"
+                  >
+                    Government of India
+                  </p>
+
+                  <p class="mt-1 text-xs font-bold text-white/80">
+                    PM-Surya Ghar
+                  </p>
+
+                </div>
+
+              </div>
+
 
               <span
-                id="eligibilityIcon"
-                class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-forest text-sm font-black text-white"
+                class="rounded-full bg-white/10 px-3 py-1.5 text-[8px] font-extrabold uppercase tracking-widest text-white/60"
               >
-                ✓
+                Residential
               </span>
 
-              <div>
+            </div>
 
-                <p
-                  id="eligibilityTitle"
-                  class="text-sm font-extrabold text-ink"
-                >
-                  You may be eligible
-                </p>
 
-                <p
-                  id="eligibilityText"
-                  class="mt-1 text-[10px] leading-5 text-slate-500"
-                >
-                  Your details indicate that you may fit the residential programme route.
-                </p>
+            <h3 class="mt-9 text-2xl font-extrabold">
+              Muft Bijli Yojana
+            </h3>
+
+            <p
+              class="mt-3 text-xs leading-5 text-white/55"
+            >
+              Eligible residential rooftop systems can receive
+              Central Financial Assistance under the programme.
+            </p>
+
+
+            <!-- Subsidy -->
+            <div
+              class="mt-6 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur"
+            >
+
+              <div class="flex justify-between gap-5">
+
+                <div>
+                  <p
+                    class="text-[8px] font-bold uppercase tracking-widest text-white/35"
+                  >
+                    First 2 kW
+                  </p>
+
+                  <p class="mt-1 text-lg font-black">
+                    ₹30,000/kW
+                  </p>
+                </div>
+
+
+                <div class="h-10 w-px bg-white/10"></div>
+
+
+                <div>
+                  <p
+                    class="text-[8px] font-bold uppercase tracking-widest text-white/35"
+                  >
+                    Next 1 kW
+                  </p>
+
+                  <p class="mt-1 text-lg font-black">
+                    ₹18,000/kW
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div
+                class="mt-4 border-t border-white/10 pt-4"
+              >
+
+                <div class="flex items-end justify-between">
+
+                  <p
+                    class="text-[8px] font-bold uppercase tracking-widest text-white/35"
+                  >
+                    Maximum residential CFA
+                  </p>
+
+                  <strong
+                    class="text-2xl font-black text-amber"
+                  >
+                    ₹78,000*
+                  </strong>
+
+                </div>
 
               </div>
 
             </div>
 
-          </div>
 
-
-          <!-- Buttons -->
-          <div class="mt-5 flex flex-col gap-3 sm:flex-row">
-
-            <button
-              id="checkEligibility"
-              type="button"
-              class="flex-1 rounded-xl bg-forest px-5 py-3.5 text-[10px] font-extrabold tracking-wide text-white transition hover:bg-ink"
-            >
-              CHECK MY ELIGIBILITY
-            </button>
-
+            <!-- CTA -->
             <a
-              href="https://pmsuryaghar.gov.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex-1 rounded-xl border border-slate-200 px-5 py-3.5 text-center text-[10px] font-extrabold tracking-wide text-ink transition hover:border-forest hover:text-forest"
+              href="#schemeEligibility"
+              class="mt-6 inline-flex items-center gap-2 text-[9px] font-extrabold uppercase tracking-[.14em] text-amber transition-all group-hover:gap-4"
             >
-              OFFICIAL PORTAL →
+              CHECK YOUR ELIGIBILITY
+              <span>→</span>
             </a>
 
           </div>
 
+        </article>
+
+
+        <!-- =====================================
+             PM KUSUM
+        ====================================== -->
+
+        <article
+          class="scheme-card group relative min-w-[330px] snap-start overflow-hidden rounded-[24px] border border-slate-200 bg-white p-7 shadow-sm transition duration-500 hover:-translate-y-1 hover:shadow-enterprise sm:min-w-[370px] lg:min-w-[400px]"
+        >
+
+          <!-- Top accent -->
+          <div
+            class="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-forest via-teal to-amber"
+          ></div>
+
+
+          <div class="flex items-start justify-between">
+
+            <div class="flex items-center gap-3">
+
+              <!-- PM identity -->
+              <div
+                class="grid h-12 w-12 place-items-center rounded-xl bg-[#FFF8E8] text-ink"
+              >
+                <div class="text-center leading-none">
+                  <div class="text-[10px] font-black">
+                    PM
+                  </div>
+
+                  <div class="mt-0.5 text-[6px] font-bold">
+                    KUSUM
+                  </div>
+                </div>
+              </div>
+
+              <div>
+
+                <p
+                  class="text-[8px] font-extrabold uppercase tracking-[.16em] text-slate-400"
+                >
+                  MNRE Programme
+                </p>
+
+                <p class="mt-1 text-xs font-extrabold text-ink">
+                  PM-KUSUM
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <span
+              class="rounded-full bg-amber/15 px-3 py-1.5 text-[8px] font-extrabold uppercase tracking-widest text-ink"
+            >
+              Agriculture
+            </span>
+
+          </div>
+
+
+          <h3
+            class="mt-9 text-2xl font-extrabold text-ink"
+          >
+            Solar for agriculture
+          </h3>
+
+          <p
+            class="mt-3 text-xs leading-5 text-slate-500"
+          >
+            Supports solarisation of agricultural pumps,
+            standalone solar pumps and decentralised renewable
+            energy projects through its applicable components.
+          </p>
+
+
+          <!-- Feature grid -->
+          <div class="mt-6 grid grid-cols-3 gap-2">
+
+            <div class="rounded-xl bg-mint p-3">
+              <p class="text-lg">☀</p>
+
+              <p
+                class="mt-2 text-[8px] font-extrabold uppercase tracking-wider text-forest"
+              >
+                Solar Pumps
+              </p>
+            </div>
+
+            <div class="rounded-xl bg-mint p-3">
+              <p class="text-lg">⚡</p>
+
+              <p
+                class="mt-2 text-[8px] font-extrabold uppercase tracking-wider text-forest"
+              >
+                Pump Solarisation
+              </p>
+            </div>
+
+            <div class="rounded-xl bg-mint p-3">
+              <p class="text-lg">🌱</p>
+
+              <p
+                class="mt-2 text-[8px] font-extrabold uppercase tracking-wider text-forest"
+              >
+                Solar Projects
+              </p>
+            </div>
+
+          </div>
+
+
+          <div
+            class="mt-5 rounded-xl bg-[#FFF8E8] p-4"
+          >
+
+            <p
+              class="text-[8px] font-extrabold uppercase tracking-widest text-slate-400"
+            >
+              Important
+            </p>
+
+            <p
+              class="mt-1 text-xs font-bold leading-5 text-ink"
+            >
+              Availability and state-level implementation
+              should be verified before quoting a benefit.
+            </p>
+
+          </div>
+
+
+          <a
+            href="https://pmkusum.mnre.gov.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-5 inline-flex items-center gap-2 text-[9px] font-extrabold uppercase tracking-[.14em] text-forest transition-all group-hover:gap-4"
+          >
+            VIEW OFFICIAL PORTAL
+            <span>→</span>
+          </a>
+
+        </article>
+
+
+        <!-- =====================================
+             RWA / GHS
+        ====================================== -->
+
+        <article
+          class="scheme-card group relative min-w-[330px] snap-start overflow-hidden rounded-[24px] border border-slate-200 bg-white p-7 shadow-sm transition duration-500 hover:-translate-y-1 hover:shadow-enterprise sm:min-w-[370px] lg:min-w-[400px]"
+        >
+
+          <div
+            class="absolute right-0 top-0 h-24 w-24 rounded-bl-[60px] bg-mint"
+          ></div>
+
+
+          <div class="relative">
+
+            <div class="flex items-start justify-between">
+
+              <div class="flex items-center gap-3">
+
+                <div
+                  class="grid h-12 w-12 place-items-center rounded-xl bg-mint text-forest"
+                >
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    class="h-6 w-6"
+                  >
+                    <path d="M3 21h18"></path>
+                    <path d="M5 21V8l7-5 7 5v13"></path>
+                    <path d="M9 21v-5h6v5"></path>
+                    <path d="M9 10h.01"></path>
+                    <path d="M12 10h.01"></path>
+                    <path d="M15 10h.01"></path>
+                  </svg>
+
+                </div>
+
+
+                <div>
+
+                  <p
+                    class="text-[8px] font-extrabold uppercase tracking-[.16em] text-slate-400"
+                  >
+                    Group Housing
+                  </p>
+
+                  <p class="mt-1 text-xs font-extrabold text-ink">
+                    RWA / GHS Solar
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <span
+                class="rounded-full bg-mint px-3 py-1.5 text-[8px] font-extrabold uppercase tracking-widest text-forest"
+              >
+                Common Areas
+              </span>
+
+            </div>
+
+
+            <h3
+              class="mt-9 text-2xl font-extrabold text-ink"
+            >
+              Power your community
+            </h3>
+
+            <p
+              class="mt-3 text-xs leading-5 text-slate-500"
+            >
+              Eligible group housing societies and RWAs may
+              receive applicable CFA for common facilities under
+              the PM-Surya Ghar framework.
+            </p>
+
+
+            <div
+              class="mt-6 rounded-2xl bg-mint p-5"
+            >
+
+              <p
+                class="text-[8px] font-extrabold uppercase tracking-widest text-slate-400"
+              >
+                Published CFA structure
+              </p>
+
+              <div class="mt-1 flex items-end justify-between">
+
+                <p class="text-2xl font-black text-forest">
+                  ₹18,000/kW
+                </p>
+
+                <span
+                  class="rounded-lg bg-white px-2.5 py-1.5 text-[8px] font-extrabold text-forest shadow-sm"
+                >
+                  UP TO 500 kW*
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- EV -->
+            <div
+              class="mt-5 flex items-center gap-3 rounded-xl border border-slate-100 p-3"
+            >
+
+              <span
+                class="grid h-9 w-9 place-items-center rounded-lg bg-mint text-forest"
+              >
+                ⚡
+              </span>
+
+              <div>
+
+                <p class="text-xs font-extrabold text-ink">
+                  EV charging
+                </p>
+
+                <p class="text-[9px] text-slate-400">
+                  Can be included in applicable common facilities
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <a
+              href="#schemeEligibility"
+              class="mt-5 inline-flex items-center gap-2 text-[9px] font-extrabold uppercase tracking-[.14em] text-forest transition-all group-hover:gap-4"
+            >
+              DISCUSS YOUR PROJECT
+              <span>→</span>
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================================
+             SOLAR LOAN / FINANCING
+        ====================================== -->
+
+        <article
+          class="scheme-card group relative min-w-[330px] snap-start overflow-hidden rounded-[24px] border border-slate-200 bg-white p-7 shadow-sm transition duration-500 hover:-translate-y-1 hover:shadow-enterprise sm:min-w-[370px] lg:min-w-[400px]"
+        >
+
+          <div class="flex items-start justify-between">
+
+            <div
+              class="grid h-12 w-12 place-items-center rounded-xl bg-[#F2F7FF] text-[#3867B8]"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                class="h-6 w-6"
+              >
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="M7 9h10"></path>
+                <path d="M7 13h4"></path>
+              </svg>
+
+            </div>
+
+
+            <span
+              class="rounded-full bg-[#F2F7FF] px-3 py-1.5 text-[8px] font-extrabold uppercase tracking-widest text-[#3867B8]"
+            >
+              Financing
+            </span>
+
+          </div>
+
+
+          <h3
+            class="mt-9 text-2xl font-extrabold text-ink"
+          >
+            Explore solar financing
+          </h3>
+
+          <p
+            class="mt-3 text-xs leading-5 text-slate-500"
+          >
+            Government-backed rooftop-solar programmes can
+            also work alongside applicable financing routes.
+            Ask us about the options available for your project.
+          </p>
+
+
+          <div
+            class="mt-6 grid grid-cols-2 gap-3"
+          >
+
+            <div class="rounded-xl bg-sand p-4">
+
+              <p class="text-lg">₹</p>
+
+              <p
+                class="mt-2 text-[8px] font-extrabold uppercase tracking-widest text-slate-400"
+              >
+                Subsidy
+              </p>
+
+              <p class="mt-1 text-xs font-bold text-ink">
+                Scheme-linked
+              </p>
+
+            </div>
+
+
+            <div class="rounded-xl bg-sand p-4">
+
+              <p class="text-lg">↗</p>
+
+              <p
+                class="mt-2 text-[8px] font-extrabold uppercase tracking-widest text-slate-400"
+              >
+                Finance
+              </p>
+
+              <p class="mt-1 text-xs font-bold text-ink">
+                Ask our team
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <a
+            href="#contact"
+            class="mt-6 inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-3 text-[9px] font-extrabold uppercase tracking-widest text-white transition hover:bg-forest"
+          >
+            GET SOLAR GUIDANCE
+            <span>→</span>
+          </a>
+
+        </article>
+
+      </div>
+
+
+      <!-- SCROLL CONTROLS -->
+
+      <div class="mt-5 flex items-center justify-between">
+
+        <div class="flex items-center gap-2">
+
+          <span
+            class="h-1.5 w-8 rounded-full bg-forest"
+          ></span>
+
+          <span
+            class="h-1.5 w-1.5 rounded-full bg-slate-300"
+          ></span>
+
+          <span
+            class="h-1.5 w-1.5 rounded-full bg-slate-300"
+          ></span>
+
+          <span
+            class="h-1.5 w-1.5 rounded-full bg-slate-300"
+          ></span>
+
+        </div>
+
+
+        <div class="flex items-center gap-2">
+
+          <button
+            id="schemePrev"
+            type="button"
+            aria-label="Previous scheme"
+            class="grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white text-ink transition hover:border-forest hover:text-forest"
+          >
+            ←
+          </button>
+
+          <button
+            id="schemeNext"
+            type="button"
+            aria-label="Next scheme"
+            class="grid h-10 w-10 place-items-center rounded-full bg-forest text-white transition hover:bg-ink"
+          >
+            →
+          </button>
+
         </div>
 
       </div>
@@ -863,11 +1220,66 @@ tailwind.config = {
     </div>
 
 
-    <!-- MICRO TRUST / DISCLAIMER -->
-    <div class="mt-4 flex flex-col justify-between gap-2 rounded-xl border border-forest/10 bg-white px-4 py-3 text-[9px] text-slate-400 sm:flex-row sm:items-center">
+    <!-- =========================================
+         ELIGIBILITY CTA
+    ========================================== -->
+
+    <div
+      id="schemeEligibility"
+      class="mt-7 overflow-hidden rounded-[24px] bg-forest text-white shadow-enterprise"
+    >
+
+      <div
+        class="grid items-center gap-7 p-7 lg:grid-cols-[1fr_auto] lg:p-9"
+      >
+
+        <div>
+
+          <p
+            class="text-[9px] font-extrabold uppercase tracking-[.2em] text-amber"
+          >
+            Not sure what applies to you?
+          </p>
+
+          <h3
+            class="mt-2 text-2xl font-extrabold sm:text-3xl"
+          >
+            Check your solar benefit eligibility.
+          </h3>
+
+          <p
+            class="mt-2 max-w-2xl text-xs leading-5 text-white/60"
+          >
+            Tell us what you're planning and our team can help
+            identify the applicable programme or solar route.
+          </p>
+
+        </div>
+
+
+        <button
+          id="openEligibility"
+          type="button"
+          class="inline-flex items-center justify-center gap-2 rounded-xl bg-amber px-6 py-3.5 text-[10px] font-extrabold tracking-wide text-ink transition hover:bg-white"
+        >
+          CHECK ELIGIBILITY
+          <span>→</span>
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- DISCLAIMER -->
+
+    <div
+      class="mt-4 flex flex-col gap-2 text-[9px] leading-4 text-slate-400 sm:flex-row sm:items-center sm:justify-between"
+    >
 
       <span>
-        Scheme information based on published MNRE / PM-Surya Ghar guidance.
+        Scheme benefits are subject to applicable government guidelines,
+        eligibility, documentation and implementation conditions.
       </span>
 
       <span class="font-bold text-forest">
@@ -1198,213 +1610,51 @@ function calculate(){
 }
 document.getElementById("calculate").addEventListener("click",calculate);
 calculate();
-// new script for calculation
+
+//new script for scroll
 /* =========================================
-   GOVERNMENT SCHEME ELIGIBILITY CHECK
+   GOVERNMENT SCHEME HORIZONTAL SCROLLER
 ========================================= */
 
-const checkEligibility = document.getElementById("checkEligibility");
+const schemeScroller =
+  document.getElementById("schemeScroller");
 
-if (checkEligibility) {
+const schemeNext =
+  document.getElementById("schemeNext");
 
-  checkEligibility.addEventListener("click", function () {
-
-    const property =
-      document.getElementById("eligibilityProperty").value;
-
-    const ownership =
-      document.getElementById("eligibilityOwnership").value;
-
-    const electricity =
-      document.getElementById("eligibilityElectricity").value;
-
-    const capacity =
-      Number(document.getElementById("eligibilityCapacity").value);
+const schemePrev =
+  document.getElementById("schemePrev");
 
 
-    const result =
-      document.getElementById("eligibilityResult");
+if (schemeScroller && schemeNext && schemePrev) {
 
-    const title =
-      document.getElementById("eligibilityTitle");
+  const getScrollAmount = () => {
 
-    const text =
-      document.getElementById("eligibilityText");
+    const card =
+      schemeScroller.querySelector(".scheme-card");
 
-    const icon =
-      document.getElementById("eligibilityIcon");
+    if (!card) return 400;
 
+    return card.offsetWidth + 20;
 
-    result.classList.remove("hidden");
+  };
 
 
-    /*
-      Residential PM-Surya Ghar route
-    */
+  schemeNext.addEventListener("click", () => {
 
-    if (
-      property === "residential" &&
-      ownership === "owner" &&
-      electricity === "yes"
-    ) {
+    schemeScroller.scrollBy({
+      left: getScrollAmount(),
+      behavior: "smooth"
+    });
 
-      let cfa = 0;
-
-      if (capacity <= 2) {
-        cfa = capacity * 30000;
-      } else if (capacity <= 3) {
-        cfa = 60000 + ((capacity - 2) * 18000);
-      } else {
-        cfa = 78000;
-      }
+  });
 
 
-      title.textContent = "You may qualify for the residential route";
+  schemePrev.addEventListener("click", () => {
 
-      text.innerHTML =
-        "Based on your answers, you may be able to apply under " +
-        "<strong>PM-Surya Ghar: Muft Bijli Yojana</strong>. " +
-        "The indicative CFA for your selected capacity is " +
-        "<strong>₹" +
-        cfa.toLocaleString("en-IN") +
-        "</strong>. Final eligibility is determined through the applicable government portal and DISCOM process.";
-
-      icon.textContent = "✓";
-
-      result.classList.remove(
-        "border-red-100",
-        "bg-red-50"
-      );
-
-      result.classList.add(
-        "border-forest/10",
-        "bg-mint"
-      );
-
-    }
-
-    /*
-      RWA / apartment
-    */
-
-    else if (
-      property === "rwa"
-    ) {
-
-      title.textContent =
-        "Your project may have an RWA / common-area route";
-
-      text.innerHTML =
-        "Group Housing Societies and RWAs may have access to applicable CFA for common facilities, including EV charging, subject to programme conditions. Our team can help you understand the applicable route.";
-
-      icon.textContent = "→";
-
-      result.classList.remove(
-        "border-red-100",
-        "bg-red-50"
-      );
-
-      result.classList.add(
-        "border-forest/10",
-        "bg-mint"
-      );
-
-    }
-
-    /*
-      Agriculture
-    */
-
-    else if (
-      property === "agriculture"
-    ) {
-
-      title.textContent =
-        "Agricultural solar route detected";
-
-      text.innerHTML =
-        "Your requirement may fall under an agricultural solar programme such as PM-KUSUM. Availability, state implementation and current scheme conditions must be verified before a benefit is quoted.";
-
-      icon.textContent = "☀";
-
-      result.classList.remove(
-        "border-red-100",
-        "bg-red-50"
-      );
-
-      result.classList.add(
-        "border-forest/10",
-        "bg-mint"
-      );
-
-    }
-
-    /*
-      Commercial
-    */
-
-    else if (
-      property === "commercial"
-    ) {
-
-      title.textContent =
-        "Commercial solar detected";
-
-      text.innerHTML =
-        "PM-Surya Ghar's residential CFA should not be assumed for a commercial property. We can instead assess your commercial solar requirement, savings potential and applicable programmes.";
-
-      icon.textContent = "i";
-
-      result.classList.remove(
-        "border-red-100",
-        "bg-red-50"
-      );
-
-      result.classList.add(
-        "border-amber/20",
-        "bg-[#FFF8E8]"
-      );
-
-    }
-
-
-    /*
-      Tenant / no electricity
-    */
-
-    if (
-      ownership === "tenant" ||
-      electricity === "no"
-    ) {
-
-      title.textContent =
-        "Additional eligibility verification required";
-
-      text.innerHTML =
-        "Your answers indicate that additional verification may be required before a government benefit can be confirmed. Speak with our solar team and we will help identify the appropriate route.";
-
-      icon.textContent = "!";
-
-      result.classList.remove(
-        "bg-mint",
-        "border-forest/10"
-      );
-
-      result.classList.add(
-        "bg-[#FFF8E8]",
-        "border-amber/20"
-      );
-
-    }
-
-
-    /*
-      Smooth scroll to result
-    */
-
-    result.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest"
+    schemeScroller.scrollBy({
+      left: -getScrollAmount(),
+      behavior: "smooth"
     });
 
   });
