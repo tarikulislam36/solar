@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bengal Solar Energy | Enterprise Solar Infrastructure</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink: "#17352D",
+        forest: "#2D8A62",
+        teal: "#4BAF87",
+        mint: "#EEF8F3",
+        amber: "#F5B83D",
+        sand: "#FAFBF8",
+        slateblue: "#60736E"
+      },
+      boxShadow: {
+        enterprise: "0 18px 60px rgba(16,42,42,.10)"
+      }
+    }
+  }
+}
+</script>
+<style>
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  .hero-grid{
+    background-image:linear-gradient(rgba(255,255,255,.065) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(255,255,255,.065) 1px,transparent 1px);
+    background-size:42px 42px;
+  }
+
+  /* Mobile hero photography: subtle premium motion */
+  .mobile-hero-image{
+    transform:scale(1.04);
+    animation:mobileHeroKenBurns 14s ease-in-out infinite alternate;
+  }
+
+  @keyframes mobileHeroKenBurns{
+    from{transform:scale(1.04) translate3d(0,0,0)}
+    to{transform:scale(1.10) translate3d(-1.5%,-1%,0)}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .mobile-hero-image{animation:none;transform:scale(1.04)}
+  }
+  .fade-up{opacity:0;transform:translateY(24px);transition:all .7s cubic-bezier(.2,.7,.2,1)}
+  .fade-up.visible{opacity:1;transform:none}
+  .nav-shadow{box-shadow:0 8px 35px rgba(16,42,42,.08)}
+  .metric-line{position:relative}
+  .metric-line:after{content:"";position:absolute;right:-1px;top:20%;height:60%;width:1px;background:#dbe6e2}
+  .metric-line:last-child:after{display:none}
+  /* new css  */
+  .whatsapp-float {
+    animation: whatsappFloatIn 0.7s ease-out both;
+  }
+
+  @keyframes whatsappFloatIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.85);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .whatsapp-float {
+      right: 18px;
+      bottom: 18px;
+    }
+
+    .whatsapp-float > span:last-child {
+      width: 52px;
+      height: 52px;
+    }
+
+    .whatsapp-float svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
+/* NEW css */
+/* =========================================
+   ENTERPRISE SCHEME SCROLLER
+========================================= */
+/* =========================================
+   ENTERPRISE RESPONSIVE SCHEME CARDS
+========================================= */
+
+.scheme-scroll {
+  display: flex;
+  gap: 18px;
+
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  padding: 2px 2px 12px;
+
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: thin;
+  scrollbar-color: #cbd8d3 transparent;
+}
+
+
+/* Chrome / Edge / Safari */
+
+.scheme-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.scheme-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scheme-scroll::-webkit-scrollbar-thumb {
+  background: #cbd8d3;
+  border-radius: 999px;
+}
+
+.scheme-scroll::-webkit-scrollbar-thumb:hover {
+  background: #2D8A62;
+}
+
+
+/* =========================================
+   CARD BASE
+========================================= */
+
+.scheme-card {
+  flex: 0 0 auto;
+
+  width: calc(100% - 28px);
+
+  min-width: 0;
+
+  scroll-snap-align: start;
+
+  box-shadow: none;
+
+  border-radius: 22px;
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+
+/* subtle enterprise hover */
+
+.scheme-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 24px rgba(23, 53, 45, 0.07);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 639px) {
+
+  .scheme-scroll {
+
+    gap: 14px;
+
+    margin-right: -20px;
+
+    padding-right: 20px;
+    padding-left: 1px;
+
+    scroll-padding-left: 1px;
+  }
+
+
+  .scheme-card {
+
+    /*
+      One complete card + small peek
+      of next card
+    */
+
+    width: calc(100vw - 52px);
+
+    max-width: none;
+
+    min-width: calc(100vw - 52px);
+
+    border-radius: 20px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL TABLETS
+========================================= */
+
+@media (min-width: 640px) and (max-width: 767px) {
+
+  .scheme-card {
+
+    width: calc(72vw);
+
+    min-width: calc(72vw);
+  }
+
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .scheme-scroll {
+
+    gap: 18px;
+  }
+
+  .scheme-card {
+
+    width: calc((100% - 18px) / 2);
+
+    min-width: calc((100% - 18px) / 2);
+  }
+
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 1024px) {
+
+  .scheme-scroll {
+
+    gap: 18px;
+
+    overflow-x: auto;
+  }
+
+
+  .scheme-card {
+
+    /*
+      Exactly 3 cards inside container
+    */
+
+    width: calc((100% - 36px) / 3);
+
+    min-width: calc((100% - 36px) / 3);
+  }
+
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1400px) {
+
+  .scheme-card {
+
+    width: calc((100% - 36px) / 3);
+
+    min-width: calc((100% - 36px) / 3);
+  }
+
+}
+
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .scheme-scroll {
+    scroll-behavior: auto;
+  }
+
+  .scheme-card {
+    transition: none;
+  }
+
+}
+/* =========================================
+   SCROLL EDGE FADES
+   Very subtle enterprise-style fade new css
+========================================= */
+
+.scheme-edge-fade {
+  pointer-events: none;
+  top: 0;
+  bottom: 0;
+
+  width: 18px;
+
+  opacity: 0.45;
+
+  z-index: 10;
+
+  transition: opacity 0.25s ease;
+}
+
+
+/* LEFT */
+
+.scheme-edge-fade-left {
+  left: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(250, 251, 248, 0.45),
+    rgba(250, 251, 248, 0)
+  );
+}
+
+
+/* RIGHT */
+
+.scheme-edge-fade-right {
+  right: 0;
+
+  background: linear-gradient(
+    to left,
+    rgba(250, 251, 248, 0.45),
+    rgba(250, 251, 248, 0)
+  );
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 639px) {
+
+  .scheme-edge-fade {
+    width: 8px;
+    opacity: 0.28;
+  }
+
+}
+/* hero section */
+@media (max-width: 639px) {
+  .solar-hero-ctas {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .solar-hero-ctas > a:first-child {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .solar-hero-ctas > a:nth-child(2),
+  .solar-hero-ctas > a:nth-child(3) {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    flex: 0 0 44px;
+  }
+}
+
+  /* MOBILE HERO REFINEMENT: desktop remains unchanged */
+  @media (max-width: 639px) {
+    .hero-grid { background-size: 28px 28px; opacity: .18 !important; }
+    section.relative.overflow-hidden.bg-\\[\\#2D8A62\\] > .absolute.-left-24 {
+      left: -150px; top: 120px; width: 250px; height: 250px; opacity: .35; filter: blur(28px);
+    }
+    section.relative.overflow-hidden.bg-\\[\\#2D8A62\\] > .absolute.-right-20 {
+      right: -170px; top: -120px; width: 330px; height: 330px; border-width: 48px; opacity: .55;
+    }
+    section.relative.overflow-hidden.bg-\\[\\#2D8A62\\] > .absolute.bottom-\\[-180px\\] {
+      bottom: -210px; right: -80px; width: 300px; height: 300px; opacity: .55;
+    }
+  }
+
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .hero-grid { background-size: 36px 36px; }
+  }
+</style>
+</head>
+
+<body class="bg-white text-slate-700">
+  <!-- Floating WhatsApp Button -->
+<a
+  href="https://wa.me/916296771414?text=Hello%20Solara%20Energy%2C%20I%27d%20like%20to%20know%20more%20about%20your%20solar%20solutions."
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat with us on WhatsApp"
+  class="whatsapp-float group fixed bottom-6 right-6 z-[9999]"
+>
+  <!-- Tooltip -->
+  <span
+    class="pointer-events-none absolute right-[calc(100%+12px)] top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-lg bg-[#17352D] px-4 py-2 text-sm font-medium text-white shadow-xl opacity-0 translate-x-2 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 md:block"
+  >
+    Chat with our team
+  </span>
+
+  <!-- Button -->
+  <span
+    class="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.35)] transition-all duration-300 hover:scale-110 hover:shadow-[0_14px_40px_rgba(37,211,102,0.45)]"
+  >
+
+    <!-- Pulse Ring -->
+    <span
+      class="absolute inset-0 rounded-full border-2 border-[#25D366] animate-ping opacity-20"
+    ></span>
+
+    <!-- WhatsApp Icon -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="relative z-10 h-7 w-7"
+      aria-hidden="true"
+    >
+      <path
+        d="M20.52 3.48A11.87 11.87 0 0 0 12.05 0C5.48 0 .13 5.35.13 11.92c0 2.1.55 4.15 1.6 5.96L0 24l6.26-1.64a11.88 11.88 0 0 0 5.79 1.48h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.18-1.24-6.17-3.46-8.44ZM12.06 21.84h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.71.97.99-3.62-.23-.37a9.84 9.84 0 0 1-1.51-5.31C2.2 6.49 6.62 2.08 12.05 2.08c2.63 0 5.1 1.03 6.96 2.9a9.78 9.78 0 0 1 2.88 6.97c0 5.43-4.41 9.85-9.83 9.89Zm5.4-7.38c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.64-.93-2.25-.25-.6-.5-.52-.68-.53h-.58c-.2 0-.52.07-.8.37-.28.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.07-.12-.27-.19-.57-.34Z"
+      />
+    </svg>
+
+  </span>
+</a>  
+   
+
+<!-- TOP UTILITY -->
+<div class="bg-[#17352D] text-white">
+  <div class="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-2.5 text-[11px] tracking-wide lg:px-8">
+    <div class="flex flex-wrap gap-x-7 gap-y-1 text-white/65">
+      <span>Enterprise Solar Infrastructure</span>
+      <span>Serving homes, businesses & industry</span>
+    </div>
+    <div class="hidden gap-5 text-white/60 md:flex">
+      <span>Support</span>
+      <span>Careers</span>
+      <span>Partner With Us</span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="header" class="nav-shadow sticky top-0 z-50 bg-white">
+  <nav class="mx-auto flex h-[78px] max-w-[1400px] items-center px-5 lg:px-8">
+
+    <a href="#" class="flex items-center gap-3.5">
+      <!-- Original CSS/SVG style mark, not copied from another company -->
+      <span class="relative grid h-11 w-11 place-items-center overflow-hidden rounded-[12px] bg-forest">
+        <span class="absolute -right-3 -top-3 h-8 w-8 rounded-full bg-amber"></span>
+        <span class="relative text-lg font-black text-white">BSE</span>
+      </span>
+      <span>
+        <span class="block text-[19px] font-black tracking-tight text-ink">Bengal Solar Energy</span>
+        <span class="block text-[8px] font-bold tracking-[.28em] text-teal">ENERGY INFRASTRUCTURE</span>
+      </span>
+    </a>
+
+    <div class="ml-auto hidden items-center gap-8 lg:flex">
+      <a href="#" class="text-[13px] font-semibold text-ink">Home</a>
+      <a href="#company" class="text-[13px] font-semibold text-slate-500 hover:text-forest">Company</a>
+      <a href="#solutions" class="text-[13px] font-semibold text-slate-500 hover:text-forest">Solutions</a>
+      <a href="#projects" class="text-[13px] font-semibold text-slate-500 hover:text-forest">Projects</a>
+      <a href="#insights" class="text-[13px] font-semibold text-slate-500 hover:text-forest">Insights</a>
+      <a href="#contact" class="rounded-md bg-forest px-5 py-3 text-[12px] font-bold text-white transition hover:bg-ink">REQUEST A QUOTE</a>
+    </div>
+
+    <button id="menu" class="ml-auto rounded-md border border-slate-200 px-3 py-2 text-ink lg:hidden">☰</button>
+  </nav>
+
+  <div id="mobile" class="hidden border-t border-slate-100 bg-white px-5 pb-5 lg:hidden">
+    <div class="grid gap-1 pt-3 text-sm font-semibold">
+      <a href="#" class="p-3">Home</a>
+      <a href="#company" class="p-3">Company</a>
+      <a href="#solutions" class="p-3">Solutions</a>
+      <a href="#projects" class="p-3">Projects</a>
+      <a href="#insights" class="p-3">Insights</a>
+      <a href="#contact" class="mt-2 bg-forest p-3 text-center text-white">Request a Quote</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO: intentionally half-height, original visual system -->
+<section class="relative overflow-hidden bg-[#2D8A62] text-white">
+  <!-- Mobile-only solar visual. Desktop hero remains unchanged. -->
+  <div class="mobile-hero-visual pointer-events-none absolute inset-0 lg:hidden" aria-hidden="true">
+    <img
+      src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=72&w=1000"
+      alt=""
+      class="mobile-hero-image h-full w-full object-cover"
+      loading="eager"
+      decoding="async"
+    >
+
+    <!-- Premium dark/green readability layer -->
+    <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,45,35,.34)_0%,rgba(13,93,67,.58)_38%,rgba(23,53,45,.92)_100%)]"></div>
+
+    <!-- Soft solar glow -->
+    <div class="absolute -right-20 top-10 h-64 w-64 rounded-full bg-[#F5B83D]/15 blur-3xl"></div>
+
+    <!-- Subtle glass/grid texture -->
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.045)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.045)_1px,transparent_1px)] bg-[size:34px_34px] opacity-60"></div>
+  </div>
+  <div class="hero-grid absolute inset-0 opacity-35"></div>
+  <div class="absolute -left-24 top-20 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+  <div class="absolute -right-20 -top-32 h-[440px] w-[440px] rounded-full border-[70px] border-white/5"></div>
+  <div class="absolute bottom-[-180px] right-[22%] h-[350px] w-[350px] rounded-full border-[45px] border-amber/10"></div>
+
+  <div class="relative mx-auto grid min-h-[430px] max-w-[1400px] items-center gap-8 px-5 py-8 sm:min-h-[470px] sm:py-10 lg:min-h-[510px] lg:grid-cols-[1.02fr_.98fr] lg:gap-12 lg:px-8 lg:py-16">
+    <div class="fade-up">
+      <div class="mb-4 inline-flex items-center gap-2 border border-white/15 bg-white/5 px-2.5 py-1.5 text-[9px] font-bold uppercase tracking-[.14em] text-white/75 sm:mb-6 sm:px-3 sm:py-2 sm:text-[11px] sm:tracking-[.16em]">
+        <span class="h-2 w-2 rounded-full bg-amber"></span>
+        Powering a more resilient future
+      </div>
+
+      <h1 class="max-w-3xl text-[38px] font-extrabold leading-[1.01] tracking-[-.035em] sm:text-[60px] sm:leading-[1.03] lg:text-[68px]">
+        Energy infrastructure<br>
+        <span class="text-amber">built for tomorrow.</span>
+      </h1>
+
+      <p class="mt-4 max-w-2xl text-[13px] leading-6 text-white/75 sm:mt-6 sm:text-[16px] sm:leading-7">
+        We design, supply and deploy dependable solar energy systems for residential, commercial, industrial and institutional customers.
+      </p>
+
+     <div class="solar-hero-ctas mt-6 flex items-center gap-2 sm:mt-8 sm:flex-wrap sm:gap-3">
+
+  <!-- GET MY SOLAR PLAN -->
+  <a
+    href="#contact"
+    class="inline-flex min-w-0 flex-1 items-center justify-center gap-1.5 rounded-xl bg-[#00E676] px-3 py-3.5 text-[11px] font-extrabold leading-none text-[#07352A] ring-1 ring-[#00E676]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#18F184]"
+  >
+    <span class="whitespace-nowrap">Get Solar Plan</span>
+    <span aria-hidden="true">→</span>
+  </a>
+
+
+  <!-- WHATSAPP -->
+  <a
+    href="https://wa.me/916296771414?text=Hi%2C%20I%20want%20to%20get%20a%20solar%20plan."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact us on WhatsApp"
+    title="WhatsApp Us"
+    class="inline-flex shrink-0 items-center justify-center rounded-xl bg-white px-3 py-3.5 text-[#17352D] ring-1 ring-white/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F4FAF7]"
+  >
+    <!-- WhatsApp -->
+    <svg
+      class="h-[18px] w-[18px]"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.89c0 2.09.55 4.13 1.6 5.93L.07 24l6.32-1.66a11.9 11.9 0 0 0 5.67 1.44h.01c6.56 0 11.89-5.33 11.89-11.89 0-3.17-1.23-6.15-3.44-8.41ZM12.07 21.76h-.01a9.85 9.85 0 0 1-5.02-1.38l-.36-.21-3.75.98 1-3.66-.23-.38a9.84 9.84 0 0 1-1.51-5.23c0-5.43 4.42-9.85 9.86-9.85a9.8 9.8 0 0 1 6.97 2.89 9.84 9.84 0 0 1 2.88 6.98c0 5.44-4.42 9.86-9.84 9.86Zm5.41-7.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.46-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+    </svg>
+  </a>
+
+
+  <!-- CALL -->
+  <a
+    href="tel:+918282895783"
+    aria-label="Call us at 8282895783"
+    title="Call 8282895783"
+    class="inline-flex shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/[0.04] px-3 py-3.5 text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/10"
+  >
+    <!-- Phone -->
+    <svg
+      class="h-[18px] w-[18px]"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+        19.79 19.79 0 0 1-8.63-3.07
+        19.5 19.5 0 0 1-6-6
+        19.79 19.79 0 0 1-3.07-8.67
+        A2 2 0 0 1 4.11 2h3
+        a2 2 0 0 1 2 1.72
+        12.84 12.84 0 0 1 .7 2.81
+        2 2 0 0 1-.45 2.11L8.09 9.91
+        a16 16 0 0 0 6 6l1.27-1.27
+        a2 2 0 0 1 2.11-.45
+        12.84 12.84 0 0 0 2.81.7
+        A2 2 0 0 1 22 16.92z"
+      />
+    </svg>
+  </a>
+
+</div>
+
+      <div class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[9px] font-semibold text-white/60 sm:mt-9 sm:gap-x-7 sm:gap-y-3 sm:text-[11px]">
+        <span>✓ Site assessment</span>
+        <span>✓ System engineering</span>
+        <span>✓ Installation & support</span>
+      </div>
+    </div>
+
+    <!-- Real solar photography -->
+    <div class="relative hidden h-[390px] overflow-hidden rounded-[28px] lg:block fade-up">
+      <img src="https://images.unsplash.com/photo-1786913508314-fac8555d5fe9?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=80&w=1800" alt="Commercial rooftop solar installation" class="h-full w-full object-cover" loading="eager">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#123E32]/85 via-transparent to-transparent"></div>
+      <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4">
+        <div class="text-white">
+          <p class="text-[9px] font-bold uppercase tracking-[.2em] text-white/60">Commercial rooftop</p>
+          <p class="mt-1 text-lg font-extrabold">Clean power. Measurable impact.</p>
+        </div>
+        <div class="rounded-2xl bg-white/95 px-4 py-3 text-ink shadow-lg backdrop-blur">
+          <p class="text-[9px] font-bold uppercase tracking-widest text-slate-400">Indicative capacity</p>
+          <p class="mt-1 text-xl font-extrabold text-forest">250 kW</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP
+<section class="border-b border-slate-100 bg-white">
+  <div class="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-4 px-5 py-5 sm:flex-row lg:px-8">
+    <div class="flex items-center gap-3">
+      <span class="grid h-8 w-8 place-items-center rounded-full bg-mint text-sm font-black text-forest">✓</span>
+      <span class="text-xs font-semibold text-slate-600">End-to-end solar delivery, from assessment to after-sales support</span>
+    </div>
+    <div class="text-[10px] font-extrabold uppercase tracking-[.16em] text-slate-400">Built around reliability · transparency · long-term value</div>
+  </div>
+</section> -->
+<!-- =========================================
+     GOVERNMENT SCHEMES 
+========================================= -->
+
+<section
+  id="solar-benefits"
+  class="relative overflow-hidden border-b border-slate-100 bg-sand"
+>
+
+  <div class="mx-auto max-w-[1400px] px-5 py-14 lg:px-8 lg:py-16">
+
+    <!-- SECTION HEADER -->
+    <div
+      class="fade-up flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between"
+    >
+
+      <div class="max-w-3xl">
+
+        <!-- Eyebrow -->
+        <div
+          class="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-white px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.16em] text-forest shadow-sm"
+        >
+          <span
+            class="grid h-5 w-5 place-items-center rounded-full bg-mint"
+          >
+            ✓
+          </span>
+
+          Government Solar Benefits
+        </div>
+
+        <h2
+          class="mt-5 text-3xl font-extrabold leading-[1.06] tracking-tight text-ink sm:text-4xl lg:text-[48px]"
+        >
+          Your rooftop can do more.
+          <span class="text-forest">So can your savings.</span>
+        </h2>
+
+        <p
+          class="mt-4 max-w-2xl text-sm leading-6 text-slate-600"
+        >
+          Explore government solar programmes that may help eligible
+          households, housing societies and agricultural users adopt
+          renewable energy.
+        </p>
+
+      </div>
+
+
+      <!-- RIGHT META -->
+      <div class="hidden lg:block">
+
+        <div
+          class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm"
+        >
+
+          <div
+            class="grid h-10 w-10 place-items-center rounded-xl bg-mint text-forest"
+          >
+            ☀
+          </div>
+
+          <div>
+            <p
+              class="text-[9px] font-extrabold uppercase tracking-[.16em] text-slate-400"
+            >
+              Explore benefits
+            </p>
+
+            <p class="mt-1 text-sm font-extrabold text-ink">
+              Before you invest
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+<!-- =========================================
+     HORIZONTAL SCROLL CONTAINER
+========================================== -->
+
+<div class="relative mt-10">
+
+  <!-- LEFT FADE -->
+  <div
+    class="scheme-edge-fade scheme-edge-fade-left pointer-events-none absolute left-0 top-0 z-10 h-full"
+  ></div>
+
+  <!-- RIGHT FADE -->
+  <div
+    class="scheme-edge-fade scheme-edge-fade-right pointer-events-none absolute right-0 top-0 z-10 h-full"
+  ></div>
+
+  <div
+    id="schemeScroller"
+    class="scheme-scroll flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5 pr-8 scroll-smooth"
+ >
+
+        <!-- =====================================
+             PM SURYA GHAR
+        ====================================== -->
+
+        <article
+          class="scheme-card group relative min-w-[330px] snap-start overflow-hidden rounded-[24px] bg-ink p-7 text-white shadow-enterprise transition duration-500 hover:-translate-y-1 hover:shadow-2xl sm:min-w-[370px] lg:min-w-[400px]"
+        >
+
+          <!-- Decorative -->
+          <div
+            class="absolute -right-20 -top-20 h-48 w-48 rounded-full border-[35px] border-white/5 transition duration-700 group-hover:scale-125"
+          ></div>
+
+          <div
+            class="absolute bottom-0 right-0 h-32 w-32 rounded-full bg-forest/20 blur-3xl"
+          ></div>
+
+
+          <div class="relative">
+
+            <!-- Official identity -->
+            <div class="flex items-start justify-between gap-4">
+
+              <div class="flex items-center gap-3">
+
+                <!-- Government / PM identity -->
+                <div
+                  class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white text-ink shadow-lg"
+                >
+                  <div class="text-center leading-none">
+                    <div class="text-[10px] font-black">
+                      PM
+                    </div>
+
+                    <div class="mt-0.5 text-[6px] font-bold tracking-tight">
+                      SURYA
+                    </div>
+
+                    <div class="text-[6px] font-bold tracking-tight">
+                      GHAR
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+
+                  <p
+                    class="text-[8px] font-extrabold uppercase tracking-[.16em] text-white/40"
+                  >
+                    Government of India
+                  </p>
+
+                  <p class="mt-1 text-xs font-bold text-white/80">
+                    PM-Surya Ghar
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <span
+                class="rounded-full bg-white/10 px-3 py-1.5 text-[8px] font-extrabold uppercase tracking-widest text-white/60"
+              >
+                Residential
+              </span>
+
+            </div>
+
+
+            <h3 class="mt-9 text-2xl font-extrabold">
+              Muft Bijli Yojana
+            </h3>
+
+            <p
+              class="mt-3 text-xs leading-5 text-white/55"
+            >
+              Eligible residential rooftop systems can receive
+              Central Financial Assistance under the programme.
+            </p>
+
+
+            <!-- Subsidy -->
+            <div
+              class="mt-6 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur"
+            >
+
+              <div class="flex justify-between gap-5">
+
+                <div>
+                  <p
+                    class="text-[8px] font-bold uppercase tracking-widest text-white/35"
+                  >
+                    First 2 kW
+                  </p>
+
+                  <p class="mt-1 text-lg font-black">
+                    ₹30,000/kW
+                  </p>
+                </div>
+
+
+                <div class="h-10 w-px bg-white/10"></div>
+
+
+                <div>
+                  <p
+                    class="text-[8px] font-bold uppercase tracking-widest text-white/35"
+                  >
+                    Next 1 kW
+                  </p>
+
+                  <p class="mt-1 text-lg font-black">
+                    ₹18,000/kW
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div
+                class="mt-4 border-t border-white/10 pt-4"
+              >
+
+                <div class="flex items-end justify-between">
+
+                  <p
+                    class="text-[8px] font-bold uppercase tracking-widest text-white/35"
+                  >
+                    Maximum residential CFA
+                  </p>
+
+                  <strong
+                    class="text-2xl font-black text-amber"
+                  >
+                    ₹78,000*
+                  </strong>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- CTA -->
+            <a
+              href="#schemeEligibility"
+              class="mt-6 inline-flex items-center gap-2 text-[9px] font-extrabold uppercase tracking-[.14em] text-amber transition-all group-hover:gap-4"
+            >
+              CHECK YOUR ELIGIBILITY
+              <span>→</span>
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================================
+             PM KUSUM
+        ====================================== -->
+
+        <article
+          class="scheme-card group relative min-w-[330px] snap-start overflow-hidden rounded-[24px] border border-slate-200 bg-white p-7 shadow-sm transition duration-500 hover:-translate-y-1 hover:shadow-enterprise sm:min-w-[370px] lg:min-w-[400px]"
+        >
+
+          <!-- Top accent -->
+          <div
+            class="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-forest via-teal to-amber"
+          ></div>
+
+
+          <div class="flex items-start justify-between">
+
+            <div class="flex items-center gap-3">
+
+              <!-- PM identity -->
+              <div
+                class="grid h-12 w-12 place-items-center rounded-xl bg-[#FFF8E8] text-ink"
+              >
+                <div class="text-center leading-none">
+                  <div class="text-[10px] font-black">
+                    PM
+                  </div>
+
+                  <div class="mt-0.5 text-[6px] font-bold">
+                    KUSUM
+                  </div>
+                </div>
+              </div>
+
+              <div>
+
+                <p
+                  class="text-[8px] font-extrabold uppercase tracking-[.16em] text-slate-400"
+                >
+                  MNRE Programme
+                </p>
+
+                <p class="mt-1 text-xs font-extrabold text-ink">
+                  PM-KUSUM
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <span
+              class="rounded-full bg-amber/15 px-3 py-1.5 text-[8px] font-extrabold uppercase tracking-widest text-ink"
+            >
+              Agriculture
+            </span>
+
+          </div>
+
+
+          <h3
+            class="mt-9 text-2xl font-extrabold text-ink"
+          >
+            Solar for agriculture
+          </h3>
+
+          <p
+            class="mt-3 text-xs leading-5 text-slate-500"
+          >
+            Supports solarisation of agricultural pumps,
+            standalone solar pumps and decentralised renewable
+            energy projects through its applicable components.
+          </p>
+
+
+          <!-- Feature grid -->
+          <div class="mt-6 grid grid-cols-3 gap-2">
+
+            <div class="rounded-xl bg-mint p-3">
+              <p class="text-lg">☀</p>
+
+              <p
+                class="mt-2 text-[8px] font-extrabold uppercase tracking-wider text-forest"
+              >
+                Solar Pumps
+              </p>
+            </div>
+
+            <div class="rounded-xl bg-mint p-3">
+              <p class="text-lg">⚡</p>
+
+              <p
+                class="mt-2 text-[8px] font-extrabold uppercase tracking-wider text-forest"
+              >
+                Pump Solarisation
+              </p>
+            </div>
+
+            <div class="rounded-xl bg-mint p-3">
+              <p class="text-lg">🌱</p>
+
+              <p
+                class="mt-2 text-[8px] font-extrabold uppercase tracking-wider text-forest"
+              >
+                Solar Projects
+              </p>
+            </div>
+
+          </div>
+
+
+          <div
+            class="mt-5 rounded-xl bg-[#FFF8E8] p-4"
+          >
+
+            <p
+              class="text-[8px] font-extrabold uppercase tracking-widest text-slate-400"
+            >
+              Important
+            </p>
+
+            <p
+              class="mt-1 text-xs font-bold leading-5 text-ink"
+            >
+              Availability and state-level implementation
+              should be verified before quoting a benefit.
+            </p>
+
+          </div>
+
+
+          <a
+            href="https://pmkusum.mnre.gov.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-5 inline-flex items-center gap-2 text-[9px] font-extrabold uppercase tracking-[.14em] text-forest transition-all group-hover:gap-4"
+          >
+            VIEW OFFICIAL PORTAL
+            <span>→</span>
+          </a>
+
+        </article>
+
+
+        <!-- =====================================
+             RWA / GHS
+        ====================================== -->
+
+        <article
+          class="scheme-card group relative min-w-[330px] snap-start overflow-hidden rounded-[24px] border border-slate-200 bg-white p-7 shadow-sm transition duration-500 hover:-translate-y-1 hover:shadow-enterprise sm:min-w-[370px] lg:min-w-[400px]"
+        >
+
+          <div
+            class="absolute right-0 top-0 h-24 w-24 rounded-bl-[60px] bg-mint"
+          ></div>
+
+
+          <div class="relative">
+
+            <div class="flex items-start justify-between">
+
+              <div class="flex items-center gap-3">
+
+                <div
+                  class="grid h-12 w-12 place-items-center rounded-xl bg-mint text-forest"
+                >
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    class="h-6 w-6"
+                  >
+                    <path d="M3 21h18"></path>
+                    <path d="M5 21V8l7-5 7 5v13"></path>
+                    <path d="M9 21v-5h6v5"></path>
+                    <path d="M9 10h.01"></path>
+                    <path d="M12 10h.01"></path>
+                    <path d="M15 10h.01"></path>
+                  </svg>
+
+                </div>
+
+
+                <div>
+
+                  <p
+                    class="text-[8px] font-extrabold uppercase tracking-[.16em] text-slate-400"
+                  >
+                    Group Housing
+                  </p>
+
+                  <p class="mt-1 text-xs font-extrabold text-ink">
+                    RWA / GHS Solar
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <span
+                class="rounded-full bg-mint px-3 py-1.5 text-[8px] font-extrabold uppercase tracking-widest text-forest"
+              >
+                Common Areas
+              </span>
+
+            </div>
+
+
+            <h3
+              class="mt-9 text-2xl font-extrabold text-ink"
+            >
+              Power your community
+            </h3>
+
+            <p
+              class="mt-3 text-xs leading-5 text-slate-500"
+            >
+              Eligible group housing societies and RWAs may
+              receive applicable CFA for common facilities under
+              the PM-Surya Ghar framework.
+            </p>
+
+
+            <div
+              class="mt-6 rounded-2xl bg-mint p-5"
+            >
+
+              <p
+                class="text-[8px] font-extrabold uppercase tracking-widest text-slate-400"
+              >
+                Published CFA structure
+              </p>
+
+              <div class="mt-1 flex items-end justify-between">
+
+                <p class="text-2xl font-black text-forest">
+                  ₹18,000/kW
+                </p>
+
+                <span
+                  class="rounded-lg bg-white px-2.5 py-1.5 text-[8px] font-extrabold text-forest shadow-sm"
+                >
+                  UP TO 500 kW*
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- EV -->
+            <div
+              class="mt-5 flex items-center gap-3 rounded-xl border border-slate-100 p-3"
+            >
+
+              <span
+                class="grid h-9 w-9 place-items-center rounded-lg bg-mint text-forest"
+              >
+                ⚡
+              </span>
+
+              <div>
+
+                <p class="text-xs font-extrabold text-ink">
+                  EV charging
+                </p>
+
+                <p class="text-[9px] text-slate-400">
+                  Can be included in applicable common facilities
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <a
+              href="#schemeEligibility"
+              class="mt-5 inline-flex items-center gap-2 text-[9px] font-extrabold uppercase tracking-[.14em] text-forest transition-all group-hover:gap-4"
+            >
+              DISCUSS YOUR PROJECT
+              <span>→</span>
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================================
+             SOLAR LOAN / FINANCING
+        ====================================== -->
+
+        <article
+          class="scheme-card group relative min-w-[330px] snap-start overflow-hidden rounded-[24px] border border-slate-200 bg-white p-7 shadow-sm transition duration-500 hover:-translate-y-1 hover:shadow-enterprise sm:min-w-[370px] lg:min-w-[400px]"
+        >
+
+          <div class="flex items-start justify-between">
+
+            <div
+              class="grid h-12 w-12 place-items-center rounded-xl bg-[#F2F7FF] text-[#3867B8]"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                class="h-6 w-6"
+              >
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="M7 9h10"></path>
+                <path d="M7 13h4"></path>
+              </svg>
+
+            </div>
+
+
+            <span
+              class="rounded-full bg-[#F2F7FF] px-3 py-1.5 text-[8px] font-extrabold uppercase tracking-widest text-[#3867B8]"
+            >
+              Financing
+            </span>
+
+          </div>
+
+
+          <h3
+            class="mt-9 text-2xl font-extrabold text-ink"
+          >
+            Explore solar financing
+          </h3>
+
+          <p
+            class="mt-3 text-xs leading-5 text-slate-500"
+          >
+            Government-backed rooftop-solar programmes can
+            also work alongside applicable financing routes.
+            Ask us about the options available for your project.
+          </p>
+
+
+          <div
+            class="mt-6 grid grid-cols-2 gap-3"
+          >
+
+            <div class="rounded-xl bg-sand p-4">
+
+              <p class="text-lg">₹</p>
+
+              <p
+                class="mt-2 text-[8px] font-extrabold uppercase tracking-widest text-slate-400"
+              >
+                Subsidy
+              </p>
+
+              <p class="mt-1 text-xs font-bold text-ink">
+                Scheme-linked
+              </p>
+
+            </div>
+
+
+            <div class="rounded-xl bg-sand p-4">
+
+              <p class="text-lg">↗</p>
+
+              <p
+                class="mt-2 text-[8px] font-extrabold uppercase tracking-widest text-slate-400"
+              >
+                Finance
+              </p>
+
+              <p class="mt-1 text-xs font-bold text-ink">
+                Ask our team
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <a
+            href="#contact"
+            class="mt-6 inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-3 text-[9px] font-extrabold uppercase tracking-widest text-white transition hover:bg-forest"
+          >
+            GET SOLAR GUIDANCE
+            <span>→</span>
+          </a>
+
+        </article>
+
+      </div>
+
+
+      <!-- SCROLL CONTROLS -->
+
+      <div class="mt-5 flex items-center justify-between">
+
+        <div class="flex items-center gap-2">
+
+          <span
+            class="h-1.5 w-8 rounded-full bg-forest"
+          ></span>
+
+          <span
+            class="h-1.5 w-1.5 rounded-full bg-slate-300"
+          ></span>
+
+          <span
+            class="h-1.5 w-1.5 rounded-full bg-slate-300"
+          ></span>
+
+          <span
+            class="h-1.5 w-1.5 rounded-full bg-slate-300"
+          ></span>
+
+        </div>
+
+
+        <div class="flex items-center gap-2">
+
+          <button
+            id="schemePrev"
+            type="button"
+            aria-label="Previous scheme"
+            class="grid h-10 w-10 place-items-center rounded-full border border-slate-200 bg-white text-ink transition hover:border-forest hover:text-forest"
+          >
+            ←
+          </button>
+
+          <button
+            id="schemeNext"
+            type="button"
+            aria-label="Next scheme"
+            class="grid h-10 w-10 place-items-center rounded-full bg-forest text-white transition hover:bg-ink"
+          >
+            →
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================
+         ELIGIBILITY CTA
+    ========================================== -->
+
+    <div
+      id="schemeEligibility"
+      class="mt-7 overflow-hidden rounded-[24px] bg-forest text-white shadow-enterprise"
+    >
+
+      <div
+        class="grid items-center gap-7 p-7 lg:grid-cols-[1fr_auto] lg:p-9"
+      >
+
+        <div>
+
+          <p
+            class="text-[9px] font-extrabold uppercase tracking-[.2em] text-amber"
+          >
+            Not sure what applies to you?
+          </p>
+
+          <h3
+            class="mt-2 text-2xl font-extrabold sm:text-3xl"
+          >
+            Check your solar benefit eligibility.
+          </h3>
+
+          <p
+            class="mt-2 max-w-2xl text-xs leading-5 text-white/60"
+          >
+            Tell us what you're planning and our team can help
+            identify the applicable programme or solar route.
+          </p>
+
+        </div>
+
+
+        <button
+          id="openEligibility"
+          type="button"
+          class="inline-flex items-center justify-center gap-2 rounded-xl bg-amber px-6 py-3.5 text-[10px] font-extrabold tracking-wide text-ink transition hover:bg-white"
+        >
+          CHECK ELIGIBILITY
+          <span>→</span>
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- DISCLAIMER -->
+
+    <div
+      class="mt-4 flex flex-col gap-2 text-[9px] leading-4 text-slate-400 sm:flex-row sm:items-center sm:justify-between"
+    >
+
+      <span>
+        Scheme benefits are subject to applicable government guidelines,
+        eligibility, documentation and implementation conditions.
+      </span>
+
+      <span class="font-bold text-forest">
+        Government programme ≠ company subsidy
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- METRICS -->
+<section class="bg-white">
+  <div class="mx-auto grid max-w-[1400px] grid-cols-2 md:grid-cols-4">
+    <div class="metric-line px-6 py-8 text-center">
+      <strong class="text-[31px] font-extrabold tracking-tight text-ink">50+</strong>
+      <p class="mt-1 text-[10px] font-bold uppercase tracking-[.14em] text-slate-400">MW commissioned</p>
+    </div>
+    <div class="metric-line px-6 py-8 text-center">
+      <strong class="text-[31px] font-extrabold tracking-tight text-ink">1,500+</strong>
+      <p class="mt-1 text-[10px] font-bold uppercase tracking-[.14em] text-slate-400">Installations</p>
+    </div>
+    <div class="metric-line px-6 py-8 text-center">
+      <strong class="text-[31px] font-extrabold tracking-tight text-ink">10+</strong>
+      <p class="mt-1 text-[10px] font-bold uppercase tracking-[.14em] text-slate-400">Years of experience</p>
+    </div>
+    <div class="metric-line px-6 py-8 text-center">
+      <strong class="text-[31px] font-extrabold tracking-tight text-ink">15+</strong>
+      <p class="mt-1 text-[10px] font-bold uppercase tracking-[.14em] text-slate-400">Service locations</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section id="company" class="bg-sand py-20 lg:py-24">
+  <div class="mx-auto grid max-w-[1400px] items-center gap-14 px-5 lg:grid-cols-[.92fr_1.08fr] lg:px-8">
+    <div class="fade-up">
+      <div class="relative overflow-hidden rounded-[26px]">
+        <img src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=80&w=1600" alt="Solar technician installing a rooftop panel" class="h-[430px] w-full object-cover" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#17352D]/75 via-transparent to-transparent"></div>
+        <div class="absolute bottom-5 left-5 rounded-2xl bg-white/95 px-5 py-4 shadow-enterprise">
+          <p class="text-[9px] font-bold uppercase tracking-[.18em] text-slate-400">Project delivery</p>
+          <p class="mt-1 text-lg font-extrabold text-ink">Design → Deliver → Support</p>
+        </div>
+      </div>
+    </div>
+    <div class="fade-up">
+      <p class="text-[11px] font-extrabold uppercase tracking-[.2em] text-teal">Who we are</p>
+      <h2 class="mt-4 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-ink sm:text-5xl">A practical partner for the transition to solar.</h2>
+      <p class="mt-6 max-w-2xl leading-7 text-slate-600">
+        Solara brings together engineering, procurement, installation and customer support to make solar projects easier to plan and operate.
+      </p>
+      <p class="mt-4 max-w-2xl leading-7 text-slate-600">
+        We work around your energy requirement, site conditions and long-term goals instead of forcing every customer into the same system.
+      </p>
+
+      <div class="mt-8 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-6 border-t border-slate-200 pt-7">
+        <div><p class="text-sm font-bold text-ink">Engineering-led</p><p class="mt-1 text-xs leading-5 text-slate-500">Site-specific system planning and sizing.</p></div>
+        <div><p class="text-sm font-bold text-ink">Customer focused</p><p class="mt-1 text-xs leading-5 text-slate-500">Clear proposals and practical guidance.</p></div>
+        <div><p class="text-sm font-bold text-ink">Built to last</p><p class="mt-1 text-xs leading-5 text-slate-500">Quality components and installation standards.</p></div>
+        <div><p class="text-sm font-bold text-ink">Long-term support</p><p class="mt-1 text-xs leading-5 text-slate-500">Service beyond project handover.</p></div>
+      </div>
+
+      <a href="#" class="mt-8 inline-flex items-center gap-3 text-xs font-extrabold tracking-wide text-forest">MORE ABOUT SOLARA <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section id="solutions" class="py-20 lg:py-24">
+  <div class="mx-auto max-w-[1400px] px-5 lg:px-8">
+    <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end fade-up">
+      <div>
+        <p class="text-[11px] font-extrabold uppercase tracking-[.2em] text-teal">Solutions</p>
+        <h2 class="mt-3 text-4xl font-extrabold tracking-tight text-ink sm:text-5xl">Solar for every scale.</h2>
+      </div>
+      <p class="max-w-md text-sm leading-6 text-slate-500">From a small rooftop to a large industrial facility, our solutions are structured around how you use energy.</p>
+    </div>
+
+    <div class="mt-12 grid gap-px overflow-hidden rounded-[24px] bg-slate-200 md:grid-cols-2 lg:grid-cols-3">
+      <article class="group bg-white p-7 transition duration-300 hover:-translate-y-1 hover:bg-forest hover:text-white hover:shadow-xl fade-up">
+        <div class="flex items-center justify-between"><span class="text-3xl font-light text-amber">01</span><span class="text-xl">↗</span></div>
+        <h3 class="mt-16 text-2xl font-extrabold">Residential Solar</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-500 group-hover:text-white/65">Rooftop systems that help households reduce grid dependence and manage electricity costs.</p>
+        <div class="mt-6 text-[11px] font-extrabold tracking-wide text-teal group-hover:text-amber">EXPLORE SOLUTION →</div>
+      </article>
+
+      <article class="group bg-white p-7 transition duration-300 hover:-translate-y-1 hover:bg-forest hover:text-white hover:shadow-xl fade-up">
+        <div class="flex items-center justify-between"><span class="text-3xl font-light text-amber">02</span><span class="text-xl">↗</span></div>
+        <h3 class="mt-16 text-2xl font-extrabold">Commercial Solar</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-500 group-hover:text-white/65">Energy systems designed for offices, retail spaces, schools, hospitals and institutions.</p>
+        <div class="mt-6 text-[11px] font-extrabold tracking-wide text-teal group-hover:text-amber">EXPLORE SOLUTION →</div>
+      </article>
+
+      <article class="group bg-white p-7 transition duration-300 hover:-translate-y-1 hover:bg-forest hover:text-white hover:shadow-xl fade-up">
+        <div class="flex items-center justify-between"><span class="text-3xl font-light text-amber">03</span><span class="text-xl">↗</span></div>
+        <h3 class="mt-16 text-2xl font-extrabold">Industrial Solar</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-500 group-hover:text-white/65">Large-scale rooftop and ground-mounted solutions for energy-intensive operations.</p>
+        <div class="mt-6 text-[11px] font-extrabold tracking-wide text-teal group-hover:text-amber">EXPLORE SOLUTION →</div>
+      </article>
+
+      <article class="group bg-white p-7 transition duration-300 hover:-translate-y-1 hover:bg-forest hover:text-white hover:shadow-xl fade-up">
+        <div class="flex items-center justify-between"><span class="text-3xl font-light text-amber">04</span><span class="text-xl">↗</span></div>
+        <h3 class="mt-16 text-2xl font-extrabold">Hybrid & Storage</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-500 group-hover:text-white/65">Solar combined with energy storage and backup for more flexible power management.</p>
+        <div class="mt-6 text-[11px] font-extrabold tracking-wide text-teal group-hover:text-amber">EXPLORE SOLUTION →</div>
+      </article>
+
+      <article class="group bg-white p-7 transition duration-300 hover:-translate-y-1 hover:bg-forest hover:text-white hover:shadow-xl fade-up">
+        <div class="flex items-center justify-between"><span class="text-3xl font-light text-amber">05</span><span class="text-xl">↗</span></div>
+        <h3 class="mt-16 text-2xl font-extrabold">Solar Water Pumping</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-500 group-hover:text-white/65">Solar-powered pumping systems for agricultural and water management applications.</p>
+        <div class="mt-6 text-[11px] font-extrabold tracking-wide text-teal group-hover:text-amber">EXPLORE SOLUTION →</div>
+      </article>
+
+      <article class="group bg-white p-7 transition duration-300 hover:-translate-y-1 hover:bg-forest hover:text-white hover:shadow-xl fade-up">
+        <div class="flex items-center justify-between"><span class="text-3xl font-light text-amber">06</span><span class="text-xl">↗</span></div>
+        <h3 class="mt-16 text-2xl font-extrabold">Solar Lighting</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-500 group-hover:text-white/65">Efficient outdoor and street lighting for campuses, communities and industrial sites.</p>
+        <div class="mt-6 text-[11px] font-extrabold tracking-wide text-teal group-hover:text-amber">EXPLORE SOLUTION →</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="bg-sand py-20 lg:py-24">
+  <div class="mx-auto max-w-[1400px] px-5 lg:px-8">
+    <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end fade-up">
+      <div>
+        <p class="text-[11px] font-extrabold uppercase tracking-[.2em] text-teal">Selected work</p>
+        <h2 class="mt-3 text-4xl font-extrabold tracking-tight text-ink sm:text-5xl">Projects that deliver measurable value.</h2>
+      </div>
+      <a href="#" class="text-xs font-extrabold tracking-wide text-forest">VIEW PROJECT PORTFOLIO →</a>
+    </div>
+
+    <div class="mt-12 grid gap-6 lg:grid-cols-[1.25fr_.75fr]">
+      <article class="group relative min-h-[470px] overflow-hidden rounded-[24px] bg-[#286F57] p-8 text-white fade-up">
+        <img src="https://images.unsplash.com/photo-1786913508314-fac8555d5fe9?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=80&w=1800" alt="Industrial rooftop solar project" class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0B3025]/95 via-[#0B3025]/35 to-transparent"></div>
+        <div class="relative flex h-full flex-col justify-between">
+          <div><span class="inline-block rounded-full bg-white/10 px-3 py-1 text-[9px] font-bold uppercase tracking-[.15em]">Industrial · 250 kW</span></div>
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-[.2em] text-amber">HOWRAH, WEST BENGAL</p>
+            <h3 class="mt-2 max-w-lg text-3xl font-extrabold sm:text-4xl">Rooftop solar for a manufacturing facility.</h3>
+            <div class="mt-7 flex gap-7 text-sm">
+              <div><b class="block text-xl">250 kW</b><span class="text-white/45">Capacity</span></div>
+              <div><b class="block text-xl">₹18L+</b><span class="text-white/45">Est. annual value</span></div>
+              <div><b class="block text-xl">10 yr</b><span class="text-white/45">Planning horizon</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="grid gap-6">
+        <article class="overflow-hidden rounded-[24px] bg-white shadow-sm fade-up">
+          <img src="https://images.unsplash.com/photo-1630770147528-3c38bc9e05a6?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=80&w=1400" alt="Residential rooftop solar" class="h-40 w-full object-cover">
+          <div class="p-7">
+          <p class="text-[10px] font-bold uppercase tracking-[.18em] text-teal">Residential · 10 kW</p>
+          <h3 class="mt-3 text-2xl font-extrabold text-ink">A smarter rooftop for an independent home.</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-500">System designed around daytime consumption and available roof area.</p>
+          <a href="#" class="mt-7 inline-block text-[11px] font-extrabold tracking-wide text-forest">CASE STUDY →</a>
+          </div>
+        </article>
+        <article class="overflow-hidden rounded-[24px] bg-ink text-white fade-up">
+          <img src="https://images.unsplash.com/photo-1786515284601-f9ac47d0758a?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=80&w=1400" alt="Large scale solar infrastructure" class="h-40 w-full object-cover opacity-90"> 
+          <div class="p-7">
+          <p class="text-[10px] font-bold uppercase tracking-[.18em] text-amber">Institutional · 500 kW</p>
+          <h3 class="mt-3 text-2xl font-extrabold">Cleaner power for a large campus.</h3>
+          <p class="mt-3 text-sm leading-6 text-white/55">A structured deployment focused on energy offset and long-term operational value.</p>
+          <a href="#" class="mt-7 inline-block text-[11px] font-extrabold tracking-wide text-amber">CASE STUDY →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="py-20 lg:py-24">
+  <div class="mx-auto max-w-[1400px] px-5 lg:px-8">
+    <div class="grid overflow-hidden rounded-[28px] bg-forest lg:grid-cols-[.85fr_1.15fr]">
+      <div class="p-9 text-white lg:p-12 fade-up">
+        <p class="text-[10px] font-extrabold uppercase tracking-[.2em] text-amber">Energy assessment</p>
+        <h2 class="mt-4 text-4xl font-extrabold leading-tight">Understand your solar potential.</h2>
+        <p class="mt-5 text-sm leading-7 text-white/65">Use our quick estimator for an indicative starting point. A site assessment gives the final recommendation.</p>
+        <div class="mt-9 border-t border-white/10 pt-6">
+          <p class="text-[10px] uppercase tracking-widest text-white/40">Typical project journey</p>
+          <div class="mt-4 flex items-center gap-2 text-xs font-semibold">
+            <span>Assess</span><span class="text-amber">→</span><span>Design</span><span class="text-amber">→</span><span>Install</span><span class="text-amber">→</span><span>Support</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-9 lg:p-12 fade-up">
+        <label class="text-xs font-bold uppercase tracking-wide text-ink">Average monthly electricity bill</label>
+        <div class="mt-3 flex">
+          <span class="grid w-12 place-items-center border border-r-0 border-slate-200 text-sm font-bold">₹</span>
+          <input id="bill" type="number" value="5000" min="0" class="min-w-0 flex-1 border border-slate-200 px-4 py-3 text-sm outline-none focus:border-teal">
+          <button id="calculate" class="bg-ink px-5 text-[11px] font-extrabold tracking-wide text-white">CALCULATE</button>
+        </div>
+
+        <div class="mt-8 grid grid-cols-2 gap-3">
+          <div class="rounded-xl bg-mint p-5"><p class="text-[9px] font-bold uppercase tracking-wide text-slate-400">Indicative system</p><strong id="system" class="mt-2 block text-2xl text-forest">3.6 kW</strong></div>
+          <div class="rounded-xl bg-mint p-5"><p class="text-[9px] font-bold uppercase tracking-wide text-slate-400">Indicative annual saving</p><strong id="saving" class="mt-2 block text-2xl text-forest">₹55K</strong></div>
+        </div>
+        <p class="mt-4 text-[10px] leading-5 text-slate-400">Estimates are illustrative and do not constitute a quotation. Final results depend on tariff, irradiation, roof area and system design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISUAL STORY -->
+<section class="bg-white py-10 lg:py-14">
+  <div class="mx-auto max-w-[1400px] px-5 lg:px-8">
+    <div class="grid gap-4 md:grid-cols-3">
+      <div class="group relative h-[260px] overflow-hidden rounded-[22px]">
+        <img src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=80&w=1400" alt="Solar installation and maintenance" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div><span class="absolute bottom-5 left-5 text-sm font-bold text-white">Engineering & installation</span>
+      </div>
+      <div class="group relative h-[260px] overflow-hidden rounded-[22px]">
+        <img src="https://images.unsplash.com/photo-1630770147528-3c38bc9e05a6?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=80&w=1400" alt="Solar panels in a residential setting" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div><span class="absolute bottom-5 left-5 text-sm font-bold text-white">Residential energy</span>
+      </div>
+      <div class="group relative h-[260px] overflow-hidden rounded-[22px]">
+        <img src="https://images.unsplash.com/photo-1786913508314-fac8555d5fe9?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=80&w=1400" alt="Industrial solar rooftop" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div><span class="absolute bottom-5 left-5 text-sm font-bold text-white">Industrial infrastructure</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section id="insights" class="bg-sand py-20 lg:py-24">
+  <div class="mx-auto max-w-[1400px] px-5 lg:px-8">
+    <div class="fade-up">
+      <p class="text-[11px] font-extrabold uppercase tracking-[.2em] text-teal">Insights</p>
+      <h2 class="mt-3 text-4xl font-extrabold tracking-tight text-ink sm:text-5xl">Ideas for a better energy strategy.</h2>
+    </div>
+
+    <div class="mt-10 grid gap-5 md:grid-cols-3">
+      <article class="rounded-[20px] bg-white p-7 shadow-sm fade-up">
+        <div class="flex justify-between text-[10px] font-bold uppercase tracking-[.15em] text-slate-400"><span>Solar Guide</span><span>06 min</span></div>
+        <h3 class="mt-10 text-2xl font-extrabold leading-tight text-ink">How to evaluate a rooftop before installing solar</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-500">The practical factors that influence system size, generation and project economics.</p>
+        <a href="#" class="mt-7 inline-block text-[11px] font-extrabold text-forest">READ ARTICLE →</a>
+      </article>
+
+      <article class="rounded-[20px] bg-white p-7 shadow-sm fade-up">
+        <div class="flex justify-between text-[10px] font-bold uppercase tracking-[.15em] text-slate-400"><span>Business</span><span>05 min</span></div>
+        <h3 class="mt-10 text-2xl font-extrabold leading-tight text-ink">Why commercial solar is becoming a strategic asset</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-500">A simple framework for thinking about energy cost, resilience and long-term value.</p>
+        <a href="#" class="mt-7 inline-block text-[11px] font-extrabold text-forest">READ ARTICLE →</a>
+      </article>
+
+      <article class="rounded-[20px] bg-white p-7 shadow-sm fade-up">
+        <div class="flex justify-between text-[10px] font-bold uppercase tracking-[.15em] text-slate-400"><span>Sustainability</span><span>04 min</span></div>
+        <h3 class="mt-10 text-2xl font-extrabold leading-tight text-ink">From electricity bills to measurable impact</h3>
+        <p class="mt-3 text-sm leading-6 text-slate-500">How organisations can connect renewable energy projects with operational goals.</p>
+        <a href="#" class="mt-7 inline-block text-[11px] font-extrabold text-forest">READ ARTICLE →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="bg-amber">
+  <div class="mx-auto flex max-w-[1400px] flex-col justify-between gap-8 px-5 py-14 lg:flex-row lg:items-center lg:px-8 lg:py-16">
+    <div class="fade-up">
+      <p class="text-[10px] font-extrabold uppercase tracking-[.2em] text-ink/60">Start a conversation</p>
+      <h2 class="mt-2 text-4xl font-extrabold tracking-tight text-ink sm:text-5xl">Let's build your solar project.</h2>
+      <p class="mt-3 text-sm text-ink/65">Tell us about your site, energy requirement and goals.</p>
+    </div>
+    <div class="flex flex-wrap gap-3 fade-up">
+      <a href="tel:+919000000000" class="bg-ink px-7 py-4 text-[11px] font-extrabold tracking-wide text-white">CALL AN EXPERT</a>
+      <a href="mailto:support@solaraenergy.in" class="bg-white px-7 py-4 text-[11px] font-extrabold tracking-wide text-ink">REQUEST A QUOTE</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#12372D] text-white">
+  <div class="mx-auto max-w-[1400px] px-5 py-14 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-[1.25fr_2fr]">
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-[11px] bg-[#F5B83D] font-black text-ink">S</span>
+          <div><p class="font-extrabold">SOLARA</p><p class="text-[8px] tracking-[.24em] text-white/35">ENERGY INFRASTRUCTURE</p></div>
+        </div>
+        <p class="mt-5 max-w-sm text-sm leading-7 text-white/45">Engineering dependable solar solutions for a cleaner and more resilient energy future.</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-8 sm:grid-cols-4">
+        <div><b class="text-sm">Company</b><div class="mt-4 grid gap-2 text-xs text-white/40"><a href="#company">About</a><a href="#">Leadership</a><a href="#">Careers</a></div></div>
+        <div><b class="text-sm">Solutions</b><div class="mt-4 grid gap-2 text-xs text-white/40"><a href="#solutions">Residential</a><a href="#solutions">Commercial</a><a href="#solutions">Industrial</a></div></div>
+        <div><b class="text-sm">Resources</b><div class="mt-4 grid gap-2 text-xs text-white/40"><a href="#projects">Projects</a><a href="#insights">Insights</a><a href="#">FAQs</a></div></div>
+        <div><b class="text-sm">Contact</b><div class="mt-4 grid gap-2 text-xs text-white/40"><a href="#contact">Request Quote</a><a href="tel:+919000000000">+91 90000 00000</a><a href="mailto:support@solaraenergy.in">Email us</a></div></div>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-[10px] text-white/25 sm:flex-row">
+      <span>© 2026 Solara Energy Infrastructure. All rights reserved. · Demo photography from Unsplash</span>
+      <div class="flex gap-5"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const menu=document.getElementById("menu");
+const mobile=document.getElementById("mobile");
+menu.addEventListener("click",()=>mobile.classList.toggle("hidden"));
+document.querySelectorAll("#mobile a").forEach(a=>a.addEventListener("click",()=>mobile.classList.add("hidden")));
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add("visible");
+  });
+},{threshold:.08});
+document.querySelectorAll(".fade-up").forEach(el=>observer.observe(el));
+
+function calculate(){
+  const bill=Math.max(Number(document.getElementById("bill").value)||0,0);
+  const kw=Math.max(1,Math.round((bill/1380)*10)/10);
+  const annual=Math.round((bill*12*.91)/1000);
+  document.getElementById("system").textContent=kw.toFixed(1)+" kW";
+  document.getElementById("saving").textContent="₹"+annual+"K";
+}
+document.getElementById("calculate").addEventListener("click",calculate);
+calculate();
+
+//new script for scroll
+/* =========================================
+   GOVERNMENT SCHEME HORIZONTAL SCROLLER
+========================================= */
+
+const schemeScroller =
+  document.getElementById("schemeScroller");
+
+const schemeNext =
+  document.getElementById("schemeNext");
+
+const schemePrev =
+  document.getElementById("schemePrev");
+
+
+if (schemeScroller && schemeNext && schemePrev) {
+
+  const getScrollAmount = () => {
+
+    const card =
+      schemeScroller.querySelector(".scheme-card");
+
+    if (!card) return 400;
+
+    return card.offsetWidth + 20;
+
+  };
+
+
+  schemeNext.addEventListener("click", () => {
+
+    schemeScroller.scrollBy({
+      left: getScrollAmount(),
+      behavior: "smooth"
+    });
+
+  });
+
+
+  schemePrev.addEventListener("click", () => {
+
+    schemeScroller.scrollBy({
+      left: -getScrollAmount(),
+      behavior: "smooth"
+    });
+
+  });
+
+}
+</script>
+</body>
+</html>
